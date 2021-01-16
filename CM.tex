@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Malo Kerebel}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, urlcolor=black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+
+\centering{
+	
+	{\scshape\LARGE Université de Bretagne Occidentale \par}
+	\vspace{1cm}
+	{\scshape\Large Note de cours\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Physique statistique\unskip\strut\par}
+	\vspace{2cm}
+	{\Large\itshape Malo Kerebel \par}
+	\vfill
+	Cours par\par
+	Jean-Philippe \textsc{Jay}
+
+	\vfill
+
+% Bottom of the page
+	{\large Semestre 6, année 2020-2021 \par}
+}
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{Introduction générale}
+\begin{center}
+\textbf{CC1 (2021-01-12)}
+\end{center}
+
+physique statistique : étude du mouvement de gaz à l'échelle macroscopique.
+Différences entre fermion et boson : leur spin, fermion spin demi entier (eg. les électrons), boson particule à spin entier (eg photon)\par
+\quad \par
+Bibliographie:
+Physique Statistique, B. Diu, C. uthmann, D.Lederer\\
+Physique Statistique, H. Ngp, C. Ngo\par
+\quad \par
+
+\section{Buts de la physique statistique}
+Unifier le macroscopique et le microscopique, au $\text{XIV}^{\text{\`eme}}$ siècle, on a la thermodynamique, la mécanique et l'électro-magnétisme mais rien qui relie les uns aux autres.
+
+Au niveau microscopique on a $\approx 10^{23}$ paramètres (de l'ordre du nombre d'Avogadro), auquel il faut avoir la vitesse et la position, il est impossible d'appliquer les résultats de la mécanique macroscopique dessus.
+La physique statistique a donc pour but d'expliquer les comportements collectifs, de particules mais les résultats peuvent s'étendre à des réseaux de neurones ou des comportements de foules.
+
+\section{Combinatoire}
+Le dénombrement des objets ou des configuration. 2 système indépendant A et B, ayant $\Omega_a$ et $\Omega_b$ configurations, il y a \(\Omega_a \times \Omega_b\) configurations possible pour la juxtaposition de A et B.
+
+\begin{center}
+\textbf{CC2 (2021-01-14)}
+\end{center}
+
+Le nombre de permutations de N objets parmi N est N!
+
+Le nombre de combinaison sans répétition s'obtient avec :
+\[
+	C^k_n = \dfrac{n!}{k!(n-k)!}
+\]
+
+\section{Probabilités - Statistiques}
+
+événement aléatoire : résultat possible d'une expérience
+
+Variable aléatoire : variable qui peut prendre l'une quelconque de ses valeurs possibles, inconnue d'avance. Discrète il y a un nombre finie de valeur, continue il y a un nombre infinie de valeur possible
+
+\paragraph{Propriétés}
+\begin{enumerate}
+	\item \(0 \leq P_m \leq 1 \quad \forall m\)
+	\item \(\sum_m P_m = 1\) (normalisation)
+\end{enumerate}
+
+Pour une variable aléatoire continue on utilise la densité de probabilité, qu'une la variable \(\in [x, x +\delta x]\)
+\[
+	w(x) = \lim_{\delta_x \rightarrow 0^+} \frac{\delta P(x)}{\delta_x}
+\]
+\[
+	dP(x) = w(x)dx = \lim_{N \rightarrow \infty} \frac{dN(x)}{N}
+\]
+De même il y a la normalisation :
+\[
+	\int_{-\infty}^{+\infty} w(x)dx = 1
+\]
+
+Quand on est dans les bonne conditions :
+\[
+	P(e_1 ou e_2) = P(e_1) + P(e_2)
+\]
+\[
+	P(e_1 et e_2) = P(e_1)\cdot P(e_2)
+\]
+
+L'écart quadratique moyen, ou variance, caratérise la dispersion de la distribution statistique, il est défini par :
+\[
+	(\Delta_f)^2 = \overline{(f - \overline{f})^2} = \overline{f^2} - (\overline{f})^2
+\]
+De même on définit l'écart-type \(\sigma\) comme la racine carré de la variance :
+\[
+	\sigma = \sqrt{(\Delta_f)^2} = \Delta_f
+\]
+
+La moyenne de résultat est :
+\[
+	\overline{n} = pN
+\]
+
+
+
+\end{document}
