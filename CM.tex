@@ -45,7 +45,7 @@
 
 \chapter{Introduction générale}
 \begin{center}
-\textbf{CC1 (2021-01-12)}
+\textbf{CM1 (2021-01-12)}
 \end{center}
 
 physique statistique : étude du mouvement de gaz à l'échelle macroscopique.
@@ -66,7 +66,7 @@ La physique statistique a donc pour but d'expliquer les comportements collectifs
 Le dénombrement des objets ou des configuration. 2 système indépendant A et B, ayant $\Omega_a$ et $\Omega_b$ configurations, il y a \(\Omega_a \times \Omega_b\) configurations possible pour la juxtaposition de A et B.
 
 \begin{center}
-\textbf{CC2 (2021-01-14)}
+\textbf{CM2 (2021-01-14)}
 \end{center}
 
 Le nombre de permutations de N objets parmi N est N!
@@ -122,6 +122,130 @@ La moyenne de résultat est :
 	\overline{n} = pN
 \]
 
+\begin{center}
+\textbf{CM3 (2021-01-19)}
+\end{center}
 
+Après calculs : \(\overline{n^2} = pN + p^2N(N-1)\)
+Donc \(\sigma^2 = \overline{n^2} - (\overline{n})^2 = pN + p^2N^2 - p^N - p^2N^2 = pN - p^2N\)
+\[
+	\sigma^2 = N p q = Np(1-p)
+\]
+
+Ainsi on voit que l'écart type croit avec N :
+(Cependant, la dispersion relative à la moyenne décroit)
+\[
+	\dfrac{\sigma}{\overline{n}} \sim \dfrac{\sqrt{N}}{N} = \dfrac{1}{\sqrt{N}}
+\]
+
+\subsection{Loi de Poisson}
+
+Hypothèses :
+\begin{itemize}
+	\item[•] \(p \rightarrow 0\)
+	\item[•] \(N \rightarrow +\infty\)
+	\item[•] MAIS \(pN = \lambda\) reste une valeur finie.
+\end{itemize}
+
+La loi de poisson dit donc que la loi binomiale devient :
+\[
+	P(N, n) = \dfrac{\lambda^n}{n!}e^{-\lambda}
+\]
+La proba ne dépend pas du nombre d'expériences N
+Exercice : Vérifier que c'est bien normalisé.
+\[
+	\sum_n P(N,n) = 1 = \sum_n \dfrac{\lambda^n}{n!}e^{-\lambda} = e^\lambda e^{-\lambda} = 1
+\]
+
+On a :
+\[
+	\overline{n} = \sigma^2 = \lambda
+\]
+On peut donc aussi écrire la loi de poisson sous la forme :
+\[
+	P = \dfrac{\overline{n}^n}{n!}e^{-\overline{n}}
+\]
+
+\subsection{Loi Gaussienne ou loi normale}
+
+La densité de probabilité est :
+\[
+	w_G (c) = \dfrac{1}{\sqrt{2\pi \sigma^2}} e^{\left[ \dfrac{- (x-x_0)^2}{2\sigma^2} \right]}
+\]
+\(w_G\) dépend de 2 paramètres, le centre (ou la moyenne) \(x_0\) et la largeur \(\sigma\)
+
+\subsection{Théorème de la limite centrale}
+
+La distribution de la somme de N variables aléatoires indépendantes et de même loi devient gaussienne lorsque N devient grand
+
+En particulier la loi binomiale \(\rightarrow\) loi gaussienne
+
+Théorème important en physique stats, car les systèmes macroscopiques sont souvent constitué d'un très grand nombre d'éléments faiblement couplés.
+
+Les variables libres de fluctuer ont alors une distribution gaussienne.
+
+\section{Entropie statistique}
+
+Les informations concernant le ssystème physique est incomplète
+L'entropie statistique mesure le manque d'information
+
+\subsection{Définition de l'entropie statistique}
+
+Ensemble fini d'événements \(e_m (m = 1,2, \cdots , M)\) de proba \(P_m\).
+Tout autre distribution implique un manque d'information
+ENtropie statistique :
+\[
+	S(P_1, P_2, \cdots, P_M) = -k \sum_{m=1}^M P_m \ln(P_m)
+\]
+Avec \(P_m \ln(P_m) = 0\) si \(P_m = 0\) et \(k = k_B = 1,380649 \times 10^{-23} J\cdot K^{-1}\) la constante de Boltzmann, seule l'ordre de grandeur et l'unité sont à retenir.
+
+L'entropie est nulle si une des proba des évenement possible est de 1. Inversement l'entropie est maximale quand tous les évenements sont équiprobable. L'entropie augmente avec le nombre d'évenement possible.
+
+\section{Quelques résultat de maths}
+
+\subsection{Approximation de Stirling}
+
+Approximation utile pour plus tard :
+Pour \(N \gg 1\), on a :
+\[
+	\ln(N!) \sim N \ln(N) - N
+\]
+
+\subsection{Intégrales gaussiennes}
+
+\[
+	\int_{-\infty}^{+\infty} e^{-\alpha x^2}dx = \sqrt{\dfrac{\pi}{\alpha}}
+\]
+
+\subsection{Méthode des multiplicateurs de Lagrange}
+
+f fonction de n variables indépendantes. Il y a un maxima si :
+\[
+	\dfrac{\partial f}{\partial x_1} = \cdots = \dfrac{\partial f}{\partial x_n} = 0
+\]
+
+Si il y a une contraintes entre les variables, ex \(g(x_1, \cdots, x_n = 0\)
+Pour prendre en compte cette contrainte, on introduit une nouvelle fonction, \(F = f \pm \lambda g\), \(\lambda\) paramètre de Lagrange.
+
+\(dF = 0 \Rightarrow \dfrac{\partial f}{\partial x_j} \pm \lambda \dfrac{\partial g}{\partial x_j}\) avec \(j = 1, \cdots, n\)
+
+\subsection{Volume sphère de dimension n - Fonction \(\Gamma\)}
+
+Le volume d'une hypersphère dans un espace à n dimensions est :
+\[
+	V_n = C_n r^n \text{ avec } C_n = \dfrac{\pi^{n/2}}{\Gamma\left( \frac{n}{2} + 1 \right)}
+\]
+
+La fonction \(\Gamma\) est telle que :
+\begin{align*}
+	\Gamma(x) &= \int_0^{+\infty} e^{-t} t^{x - 1} dt\\
+	\Gamma (x+1) &= x \Gamma(x)\\
+	\Gamma (\frac{1}{2}) &= \sqrt{\pi}\\
+	\Gamma (1) &= 1	
+\end{align*}
+Si \(n \in N\) on a :
+\[
+\Gamma (n + 1) = n!
+\]	
 
 \end{document}
