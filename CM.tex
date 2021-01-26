@@ -16,6 +16,9 @@
     linkcolor=black, urlcolor=black
 }
 
+%Macro
+\newcommand{\ens}[1]{\mathbb{#1}}
+
 \begin{document}
 
 
@@ -247,5 +250,92 @@ Si \(n \in N\) on a :
 \[
 \Gamma (n + 1) = n!
 \]	
+
+\begin{center}
+\textbf{CM4 (2021-01-26)}
+\end{center}
+
+\chapter{Description statistique d'un système physique}
+
+\section{Description quantique}
+
+Un état quantique est définit par un ket : \(\vert \varphi \rangle\)
+Son évolution est donné par l'équation de Schrödinger :
+\[
+	i\hbar \dfrac{\partial \vert \varphi \rangle}{\partial t} = \hat{H} \vert \varphi \rangle
+\]
+
+Avec H l'hamiltonien du système (opérateur associé à l'énergie)
+\[
+	\hat{H} = \hat{T} + \hat{V} = \dfrac{\hat{P}}{2m} + \hat{V}
+\]
+
+Si \(\hat{H}\) est indépendant du temps on a alors un système conservatif. les valeur propres de \(\hat{H}\)H donnes les valeurs possibles de l'énergie.
+
+En général, les énergies sont dégénérées : plusieurs états peuvent avoir la même énergie.
+
+Pour un état quantique macroscopique, on a un mélange statistique des états purs.
+On a donc la valeur moyenne dans l'état pur \(\vert \varphi \rangle\) : \(\langle A_m \rangle = \langle \varphi_m \vert \hat{A} \vert \varphi_m \rangle\)
+
+On aura à calculer des sommes sur les états stationnaires (\(\ell\)) de la forme :
+\[
+	\overline{A} = \sum_{(\ell)} P_{\ell} A_{\ell}
+\]
+
+Il ne faut pas confondre les niveaux d'énergie et les états stationnaires, en général, plusieurs états microscopisques (\(\ell\)) distincts correspondent à la même énergie
+
+Mais la quantité à sommmer peut nedépendre que de l'énergie \(E_\ell\) de l'état (\(\ell\))
+
+On peut remplacer \(\sum_{\text{état(}\ell)}\) par \(\sum_{\text{Niveau d'énergie}}\)
+
+Pour un système macroscopique, l'écart entre 2 niveaux consécutifs d'énergie est très faible et on peut l'approximer comme continue pour pouvoir intégrer plutot que faire la somme discrète.
+
+On définit la densité d'états \(dn(E)\) nombre d'état dont l'énergie est comprise entre E et E + dE.
+On peut faire :
+\[
+	\overline{A} = \sum_{E_\ell} g(E_\ell)f(E_\ell) = \int_{E_0}^{\infty} \rho(E)f(E) dE
+\]
+
+Cette approximation n'est plus bonne si f(E) varie très brusquement.
+
+En pratique il est plus facile de calculer le nombre d'état ne dépassant pas une certaine énergie \(\Phi(E)\), on a donc \(dn(E) = \Phi(E+dE) - \Phi(E)\) d'où comme \(dE \rightarrow 0\) : 
+\[
+	\rho(E) = \dfrac{d\Phi}{dE}
+\]
+
+\subsection{N particules dans une boite de volume V-Gaz parfait}
+
+N particules sans interaction dans une boite de volume \( V \equiv GP\)
+
+Énergies totale :
+\[
+	E = \sum_{i = 1}^N \varepsilon_i = (n_{x1}^2 + n_{y1}^2 + n_{z1}^2 + \cdots n_{xN}^2 + n_{yN}^2 + n_{zN}^2)\varepsilon_0
+\]
+
+Donc le nombre d'état à  une énergie inférieure à E est :
+\[
+	\Phi(E) = \dfrac{1}{2^{3N}} \dfrac{\pi^{3N/2}}{\Gamma(3N/2 + 1)} \left( \dfrac{E}{\varepsilon_0}\right)^{3N/2}
+\]
+
+La densité d'état est donc :
+\[
+	\rho(E) \propto E^{\frac{3N}{2} - 1}
+\]
+
+\subsection{Particules discernables - indiscernables}
+
+En physique classiques les particules sont discernables car on peut suivre les trajectoires de chacunes d'entre elles.
+En quantique, la notion de trajectoire n'existe pas.
+Il est donc impossible de distingur deux quantons identiques indépendants, ils sont indiscernables.
+En fais ce sont les positions occupé par les quantons qui seront discernables, ou pas.
+
+La fonction d'onde d'un système de particule identique est symétrique ou antisymétrique par rapport à leur permutation
+
+Si la fonction d'onde est symétrique on a des bosons.
+Les bosons ont donc un spin entier : \(s = n \hbar \quad  n \in \ens{N}\)
+
+Si la fonction est antisymétrique, on a des fermions, avec un spin demi-entier \(s = (n + \frac{1}{2}) \hbar \quad n \in \ens{N}\)
+
+
 
 \end{document}
