@@ -337,6 +337,37 @@ Les bosons ont donc un spin entier : \(s = n \hbar \quad  n \in \ens{N}\)
 
 Si la fonction est antisymétrique, on a des fermions, avec un spin demi-entier \(s = (n + \frac{1}{2}) \hbar \quad n \in \ens{N}\)
 
+\begin{center}
+\textbf{CM4 (2021-02-02)}
+\end{center}
+
+\section{Cas de particules discernables}
+
+On a au total N particules et $n_r$ particules à un niveau d'énergie $\epsilon_r$ dégénéré $g_r$ fois.
+Pour le $1^{\text{er}}$ niveau d'énergie on a $C_N^{n_1}$ façons de choisir $n_1$ particules parmi N.
+Comme on a $g_1$ état de même énergie, il y a $g_1^{n_1}$ choix
+\[
+	\Omega_1 = C_N^{n_1} g_1^{n_1}
+\]
+Pour le $2^{\text{ème}}$ niveau, il ne reste que $N - n_1$ particules, on choisit $n_2$ parmi ces $N - n_1 \Rightarrow C_{N-n_1}^{n_2}$ choix possibles, il y a $g_2$ états $\Rightarrow g_2^{n_2}$.
+etc... pour la suite :
+\begin{align*}
+	\Omega &= \prod_{i=1} \Omega_i\\
+	&= \prod_{i=1} C_{N-\sum_{j=1}^{i-1} n_j}^{n_i} g_i^{n_i}\\
+	&= \dfrac{N!}{n_1!(N-n_1)!} \times \dfrac{(N-n_1)!}{n_2!(N-n_1-n_2)!}\cdots \times g_1^{n_1} \cdot\\
+	&= \dfrac{N!}{n_1!n_2! \cdots} g_1^{n_1}g_2^{n_2} \cdots\\
+	&= N! \prod \dfrac{g_r^{n_r}}{n_r!}
+\end{align*}
 
 
+\section{Cas des fermions}
+
+\section{Cas des bosons}
+
+Un système est dilué si le nombre de particules $n_r$ à répartir dans les $g_r$ états est petit ($n_r \ll g_r$) alors on montre que :
+\[
+	\Omega^B \simeq \Omega^F \simeq \dfrac{1}{N!}\Omega^{\text{Discernable}}
+\]
+
+$\Rightarrow$ Boson et fermions dilués quasi équivalents aux particules classique mais avec un facteur d'indiscernabilité : $\frac{1}{N!}$
 \end{document}
