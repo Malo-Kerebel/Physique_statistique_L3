@@ -338,7 +338,7 @@ Les bosons ont donc un spin entier : \(s = n \hbar \quad  n \in \ens{N}\)
 Si la fonction est antisymétrique, on a des fermions, avec un spin demi-entier \(s = (n + \frac{1}{2}) \hbar \quad n \in \ens{N}\)
 
 \begin{center}
-\textbf{CM4 (2021-02-02)}
+\textbf{CM5 (2021-02-02)}
 \end{center}
 
 \section{Cas de particules discernables}
@@ -360,9 +360,9 @@ etc... pour la suite :
 \end{align*}
 
 
-\section{Cas des fermions}
+\subsection{Cas des fermions}
 
-\section{Cas des bosons}
+\subsection{Cas des bosons}
 
 Un système est dilué si le nombre de particules $n_r$ à répartir dans les $g_r$ états est petit ($n_r \ll g_r$) alors on montre que :
 \[
@@ -370,4 +370,134 @@ Un système est dilué si le nombre de particules $n_r$ à répartir dans les $g
 \]
 
 $\Rightarrow$ Boson et fermions dilués quasi équivalents aux particules classique mais avec un facteur d'indiscernabilité : $\frac{1}{N!}$
+
+\section{Description d'un système classique}
+
+\begin{center}
+\textbf{CM5 (2021-02-08)}
+\end{center}
+
+\subsection{État microscopique - description classique}
+
+La description quantique n'est pas toujours nécessaire. Le système est décrit par les positions et les impulsions des particules du système. Les lois de Newton décrivent les évolutions du système.
+
+États du système est décrit par l'espace des phases, de dimension 6N, avec N le nombre de particules. La position en \(x\), \(y\) et \(z\) et l'impulsion en $p_x$, $p_y$ et $p_z$.
+En mécanique classique le nombre d'état est infini (l'énergie n'est pas multiple entière d'un quantum d'énergie), les variables sont donc continues.
+
+On quadrille l'espace en case de largeur $\delta_p$ et $\delta_q$, le volume d'une case est donc de \(h_0 = \delta_p \delta_q\) et son unité est le produit d'une longueur et d'une impulsion, son unité est donc des $J\cdot s$ (équivalent à l'unité de \(\hbar\).
+
+Plus on prend une cellule petite, plus la précision est élevé. classiquement \(h_0\) peut-être aussi petit que l'on veut, mais la physique quantique impose \(h_0 \geq h\), la constante de Planck.
+
+Si le nombre de paramètres nécessaire est grand, on utilise les probabilité pour définir un état macroscopique.
+L'état macroscopique est donc caractérisé par une densité de probabilité dans l'espace des phases.
+\(dP = w\left( q, p; t\right) dq~dp\) :Probabilité que le système se trouve dans l'état {q, p} à \(dq~dp\) près.
+
+La valeur moyenne d'une grandeur physique f :
+\[
+	\overline{f} = \int f(q,p; t) w(q,p;t)dq dp
+\]
+
+L'approche classique est valable si l'action caractéristique du système est très supérieur à \(\hbar\) avec :\\
+(action) \(\equiv\) (Énergie) \(\times\) (temps) ou (Longueur) \(\times\) (quantité de mouvement)
+
+Pour un gaz parfait, on a la vitesse moyenne :
+\[
+	\overline{v} = \sqrt{\dfrac{3 k_B T}{m}}
+\]
+
+Avec, \(\ell\) la distance moyenne entre les particule :\(\ell = \left( \frac{V}{N}\right)^{1/3}\)
+
+et, \(\lambda\) la longueur d'onde thermique de De Broglie : \(\lambda = \frac{\hbar}{\sqrt{3mk_BT}}\)
+
+L'approche classique est valide si \(\ell \gg \lambda\), soit lorsque la température est élevé et/ou lorsque la densité est faible.
+
+Si on impose des contraites au système, le volume accessible de l'espace des phases est limité à \(\mathfrak{V}_\phi\)
+Alors le nombre de micro-états accessible au système est :
+\[
+	\dfrac{\mathfrak{V}_\phi}{h_0^n} \text{ avec } h_0 = h
+\]
+
+\paragraph{Exemple}
+
+Une particule m dans une boite de volume V, \(E = \left( p_x^2 + p_y^2 + p_z^2\right)/2m\)
+
+\(\Phi(E)\) est le nombre d'états dont l'énergie est inférieure à E :\\
+\(p_x^2 + p_y^2 + p_z^2 \leq 2mE\)
+\[
+	\Phi(E) = \dfrac{V \frac{4}{3} \pi (2mE)^{3/2}}{h^3}
+\]
+
+\chapter{Ensemble microcanonique}
+
+\section{Équilibre}
+
+Au niveau microscopique on a toujours des fluctuations, même à l'équilibre.
+
+\paragraph{Définition} Ensemble statistique
+
+Collection d'un grand nombre de système identique (réplique du système initial)
+
+\paragraph{Définition} Moyenne d'ensemble
+
+La moyenne d'ensemble d'une grandeur A est :
+\[
+	\overline{A} = \sum_{(\ell)} P_\ell A_\ell
+\]
+
+Tous les ensembles sont pris au même instant, mais en pratique on ne peut prendre qu'un seul système
+
+\paragraph{Définition} Principe ergotique
+On postule que dans un système à l'équilibre est :
+\[
+	\overline{A} = \sum_{(\ell)} P_\ell A_\ell = \underset{\tau \rightarrow \infty}{\lim} \dfrac{1}{\tau} \int_0^\tau A(t) dt = \langle A \rangle
+\]
+
+Principe essentiel en pratique : On mesure des moyennes temporelles mais la théorie est basée sur des moyennes d'ensemble.
+
+\paragraph{Définition} Paramètres extérieurs
+
+Propriétés fixées par des contraintes extérieures, valeurs statistiquement certaines même si il y a une incertitude expérimentale.
+
+\paragraph{Définition} Variables internes
+
+Propriétés libres de fluctuer au gré de l'agitation microscopique.
+
+Selon les cas, une même grandeur peut être un parmètre extérieur ou une variable interne.
+
+\paragraph{Définition} États accessibles
+
+États microscopique vérifiant les contraintes extérieures, c'est-à-dire compatible avec les valeurs des paramètres extérieurs.
+
+\paragraph{Postulat}
+
+Pour un système isolé à l'équilibre macroscopique, tous les états accessibles ont la même probabilité.
+
+Soit E l'énergies du système (fixée) et \(\delta E\) l'incertitude macroscopique associée.
+
+Les états microscopique accessibles (\(\ell\)) sont ceux qui vérifient toutes les autres contraintes extérieures.
+
+L'ensemble constitué de systèmes isolés identique est appelé ensemble microcanonique. Dans cet ensemble seuls apparaissent les états (\(\ell\)) accessibles et ils apparaissent avec la même fréquence dnas la limite \(\mathcal{N} \rightarrow \infty\), postulat fondamental \(\equiv\) principe du "désordre maximum" :
+
+La distribution microcanonique est celle qui maximise l'entropie statistique (On parle de désordre mais ça représente plutot le manque d'information).
+
+On associe une entropie appelée entropie microcanonique à la distribution microcanonique
+
+\paragraph{Définition} Entropie microcanonique :
+
+Les micro-états étant équiprobables, l'entropie microcanonique est :
+\[
+	S^* = k_B \ln \Omega
+\]
+Avec \(\Omega\) le nombre d'états accessibles.
+
+\(\Omega(E,x, \delta	E )= \rho(E, x)\delta E \)
+
+\(\ln \Omega = \ln \rho(E,x) + \ln \delta E\)
+
+\(S^* (E,x) = k_B \ln \rho(E,x)\) et aussi \(S^* (E,x) = k_B \ln \Phi(E)\)
+
+\begin{center}
+\textbf{CM6 (2021-02-09)}
+\end{center}
+
 \end{document}
