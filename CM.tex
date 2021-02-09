@@ -417,9 +417,10 @@ Alors le nombre de micro-états accessible au système est :
 	\dfrac{\mathfrak{V}_\phi}{h_0^n} \text{ avec } h_0 = h
 \]
 
-\paragraph{Exemple}
+\paragraph{Exemple} Une particule m dans une boite de volume V
 
-Une particule m dans une boite de volume V, \(E = \left( p_x^2 + p_y^2 + p_z^2\right)/2m\)
+
+\(E = \left( p_x^2 + p_y^2 + p_z^2\right)/2m\)
 
 \(\Phi(E)\) est le nombre d'états dont l'énergie est inférieure à E :\\
 \(p_x^2 + p_y^2 + p_z^2 \leq 2mE\)
@@ -498,6 +499,73 @@ Avec \(\Omega\) le nombre d'états accessibles.
 
 \begin{center}
 \textbf{CM6 (2021-02-09)}
+\end{center}
+
+L'entropie \(S^\star\) est une valeur extensive
+
+\paragraph{Temperature \(T^\star\)}
+
+Définie par 
+\[
+	\dfrac{1}{T^\star} = \left( \dfrac{\partial S^\star}{\partial E}\right)_{V,N}
+\]
+
+\paragraph{Pression \(P^\star\)}
+
+Définie par
+\[
+	\dfrac{p^\star}{T^\star} = \left( \dfrac{\partial S^\star}{\partial V}\right)_{E,N}
+\]
+
+\paragraph{Potentiel chimique \(\mu^\star\)}
+
+Définie par
+\[
+	\dfrac{\mu^\star}{T^\star} = \left( \dfrac{\partial S^\star}{\partial N}\right)_{E,V}
+\]
+
+On a donc :
+\[
+	dS^\star = \dfrac{dE}{T^\star} + \dfrac{p^\star}{t^\star}dV + \dfrac{\mu^\star}{T^\star}dN
+\]
+
+On s'intéresse aux changements d'états d'équilibre d'un système isolé.
+
+On prend un gaz isolé dans un volume V, on ouvre une enceinte vide de volume \(\Delta V\), plus d'état son possible, et donc l'entropie va augmenter.
+
+La modification de contrainte extérieures augmente l'entropie et le prochain état d'équilibre correspond au nouveau maximum de son entropie.
+
+\paragraph{Exemple}
+
+Volume séparé en deux parti séparé par une paroi isolante qui devient diatherme. À l'équilibre final on aura l'état à l'entropie maximal, une température égal dans les deux parties du volume.
+
+L'énergie du système est de \(E = E_1 + E_2\)
+
+Initialement \(E_1\) et \(E_2\) sont des paramètres extérieurs mais après changement de la paroi, \(E_1\) et \(E_2\) deviennent des variables internes
+
+\[
+	w(E_1) = \dfrac{\omega(E,V,N,E_1)\delta E_1}{\Omega(E,V,N)}
+\]
+Avec \(\omega(E,V,N,E_1)\), le nombre d'états accessible au systeme tels que l'énergie de la zone 1 soit égale à \(E_1\) (à \(\delta E_1\) près) et \(\Omega(E,V,N)\) le nombre d'états accessibles.
+
+À l'équilibre \(\tilde{E_1}\) maximise \(s^\star(E_1) = S_1^\star(E_1) + S_2^\star(E-E_1)\)
+
+\[
+	\dfrac{\partial s^\star}{\partial E_1}(E_1 = \tilde{E_1} = 0 = \dfrac{\partial S_1^\star}{\partial E_1} + \dfrac{\partial S_2^\star}{\partial E_2} \dfrac{\partial E_2}{\partial E_1}
+\]
+On a \(E_2 = E-E_1\), donc :
+\[
+	\dfrac{\partial E_2}{\partial E_1} = -1 \text{ et } \dfrac{\partial S_1^\star}{\partial E_1} (E_1 = \tilde{E_1}) - \dfrac{\partial S_2^\star}{\partial E_2} (E_2 = E - \tilde{E_1}) = 0
+\]
+\[
+	\Leftrightarrow \dfrac{1}{T_1^\star} = \dfrac{1}{T_2^\star}
+\]
+\[
+	\Leftrightarrow T_1^\star = T_2^\star
+\]
+
+\begin{center}
+\textbf{CM7 (2021-02-**)}
 \end{center}
 
 \end{document}
