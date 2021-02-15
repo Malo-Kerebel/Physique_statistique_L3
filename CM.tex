@@ -66,7 +66,7 @@ Au niveau microscopique on a $\approx 10^{23}$ paramètres (de l'ordre du nombre
 La physique statistique a donc pour but d'expliquer les comportements collectifs, de particules mais les résultats peuvent s'étendre à des réseaux de neurones ou des comportements de foules.
 
 \section{Combinatoire}
-Le dénombrement des objets ou des configuration. 2 système indépendant A et B, ayant $\Omega_a$ et $\Omega_b$ configurations, il y a \(\Omega_a \times \Omega_b\) configurations possible pour la juxtaposition de A et B.
+Le dénombrement des objets ou des configurations. 2 systèmes indépendants A et B, ayant $\Omega_a$ et $\Omega_b$ configurations, il y a \(\Omega_a \times \Omega_b\) configurations possibles pour la juxtaposition de A et B.
 
 \begin{center}
 \textbf{CM2 (2021-01-14)}
@@ -74,7 +74,7 @@ Le dénombrement des objets ou des configuration. 2 système indépendant A et B
 
 Le nombre de permutations de N objets parmi N est N!
 
-Le nombre de combinaison sans répétition s'obtient avec :
+Le nombre de combinaisons sans répétitions s'obtient avec :
 \[
 	C^k_n = \dfrac{n!}{k!(n-k)!}
 \]
@@ -83,7 +83,7 @@ Le nombre de combinaison sans répétition s'obtient avec :
 
 événement aléatoire : résultat possible d'une expérience
 
-Variable aléatoire : variable qui peut prendre l'une quelconque de ses valeurs possibles, inconnue d'avance. Discrète il y a un nombre finie de valeur, continue il y a un nombre infinie de valeur possible
+Variable aléatoire : variable qui peut prendre l'une quelconque de ses valeurs possibles, inconnue d'avance. Discrète il y a un nombre finie de valeurs, continue il y a un nombre infini de valeurs possibles.
 
 \paragraph{Propriétés}
 \begin{enumerate}
@@ -91,7 +91,7 @@ Variable aléatoire : variable qui peut prendre l'une quelconque de ses valeurs 
 	\item \(\sum_m P_m = 1\) (normalisation)
 \end{enumerate}
 
-Pour une variable aléatoire continue on utilise la densité de probabilité, qu'une la variable \(\in [x, x +\delta x]\)
+Pour une variable aléatoire continue on utilise la densité de probabilité, que la variable \(\in [x, x +\delta x]\)
 \[
 	w(x) = \lim_{\delta_x \rightarrow 0^+} \frac{\delta P(x)}{\delta_x}
 \]
@@ -189,20 +189,21 @@ Les variables libres de fluctuer ont alors une distribution gaussienne.
 
 \section{Entropie statistique}
 
-Les informations concernant le ssystème physique est incomplète
-L'entropie statistique mesure le manque d'information
+Les informations concernant le système physique sont incomplète.
+L'entropie statistique mesure le manque d'information.
 
 \subsection{Définition de l'entropie statistique}
 
 Ensemble fini d'événements \(e_m (m = 1,2, \cdots , M)\) de proba \(P_m\).
 Tout autre distribution implique un manque d'information
-ENtropie statistique :
+
+\textbf{Entropie statistique} :
 \[
 	S(P_1, P_2, \cdots, P_M) = -k \sum_{m=1}^M P_m \ln(P_m)
 \]
 Avec \(P_m \ln(P_m) = 0\) si \(P_m = 0\) et \(k = k_B = 1,380649 \times 10^{-23} J\cdot K^{-1}\) la constante de Boltzmann, seule l'ordre de grandeur et l'unité sont à retenir.
 
-L'entropie est nulle si une des proba des évenement possible est de 1. Inversement l'entropie est maximale quand tous les évenements sont équiprobable. L'entropie augmente avec le nombre d'évenement possible.
+L'entropie est nulle si une des probabilités des événements possibles est de 1. Inversement l'entropie est maximale quand tous les événements sont équiprobables. L'entropie augmente avec le nombre d'événements possibles.
 
 \section{Quelques résultat de maths}
 
@@ -260,8 +261,8 @@ Si \(n \in N\) on a :
 
 \section{Description quantique}
 
-Un état quantique est définit par un ket : \(\vert \varphi \rangle\)
-Son évolution est donné par l'équation de Schrödinger :
+Un état quantique est défini par un ket : \(\vert \varphi \rangle\)
+Son évolution est donnée par l'équation de Schrödinger :
 \[
 	i\hbar \dfrac{\partial \vert \varphi \rangle}{\partial t} = \hat{H} \vert \varphi \rangle
 \]
@@ -285,11 +286,11 @@ On aura à calculer des sommes sur les états stationnaires (\(\ell\)) de la for
 
 Il ne faut pas confondre les niveaux d'énergie et les états stationnaires, en général, plusieurs états microscopisques (\(\ell\)) distincts correspondent à la même énergie
 
-Mais la quantité à sommmer peut nedépendre que de l'énergie \(E_\ell\) de l'état (\(\ell\))
+Mais la quantité à sommmer peut ne dépendre que de l'énergie \(E_\ell\) de l'état (\(\ell\))
 
 On peut remplacer \(\sum_{\text{état(}\ell)}\) par \(\sum_{\text{Niveau d'énergie}}\)
 
-Pour un système macroscopique, l'écart entre 2 niveaux consécutifs d'énergie est très faible et on peut l'approximer comme continue pour pouvoir intégrer plutot que faire la somme discrète.
+Pour un système macroscopique, l'écart entre 2 niveaux consécutifs d'énergie est très faible et on peut l'approximer comme continu pour pouvoir intégrer plutôt que faire la somme discrète.
 
 On définit la densité d'états \(dn(E)\) nombre d'état dont l'énergie est comprise entre E et E + dE.
 On peut faire :
@@ -325,12 +326,12 @@ La densité d'état est donc :
 
 \subsection{Particules discernables - indiscernables}
 
-En physique classiques les particules sont discernables car on peut suivre les trajectoires de chacunes d'entre elles.
+En physique classique les particules sont discernables car on peut suivre les trajectoires de chacune d'entre elles.
 En quantique, la notion de trajectoire n'existe pas.
 Il est donc impossible de distingur deux quantons identiques indépendants, ils sont indiscernables.
-En fais ce sont les positions occupé par les quantons qui seront discernables, ou pas.
+En fais ce sont les positions occupées par les quantons qui seront discernables, ou pas.
 
-La fonction d'onde d'un système de particule identique est symétrique ou antisymétrique par rapport à leur permutation
+La fonction d'onde d'un système de particules identiques est symétrique ou antisymétrique par rapport à leur permutation
 
 Si la fonction d'onde est symétrique on a des bosons.
 Les bosons ont donc un spin entier : \(s = n \hbar \quad  n \in \ens{N}\)
@@ -369,7 +370,7 @@ Un système est dilué si le nombre de particules $n_r$ à répartir dans les $g
 	\Omega^B \simeq \Omega^F \simeq \dfrac{1}{N!}\Omega^{\text{Discernable}}
 \]
 
-$\Rightarrow$ Boson et fermions dilués quasi équivalents aux particules classique mais avec un facteur d'indiscernabilité : $\frac{1}{N!}$
+$\Rightarrow$ Bosons et fermions dilués quasi équivalents aux particules classiques mais avec un facteur d'indiscernabilité : $\frac{1}{N!}$
 
 \section{Description d'un système classique}
 
@@ -384,9 +385,9 @@ La description quantique n'est pas toujours nécessaire. Le système est décrit
 États du système est décrit par l'espace des phases, de dimension 6N, avec N le nombre de particules. La position en \(x\), \(y\) et \(z\) et l'impulsion en $p_x$, $p_y$ et $p_z$.
 En mécanique classique le nombre d'état est infini (l'énergie n'est pas multiple entière d'un quantum d'énergie), les variables sont donc continues.
 
-On quadrille l'espace en case de largeur $\delta_p$ et $\delta_q$, le volume d'une case est donc de \(h_0 = \delta_p \delta_q\) et son unité est le produit d'une longueur et d'une impulsion, son unité est donc des $J\cdot s$ (équivalent à l'unité de \(\hbar\).
+On quadrille l'espace en case de largeur $\delta_p$ et $\delta_q$, le volume d'une case est donc de \(h_0 = \delta_p \delta_q\) et son unité est le produit d'une longueur et d'une impulsion, son unité est donc des $J\cdot s$ (équivalent à l'unité de \(\hbar\)).
 
-Plus on prend une cellule petite, plus la précision est élevé. classiquement \(h_0\) peut-être aussi petit que l'on veut, mais la physique quantique impose \(h_0 \geq h\), la constante de Planck.
+Plus on prend une cellule petite, plus la précision est élevée. classiquement \(h_0\) peut-être aussi petit que l'on veut, mais la physique quantique impose \(h_0 \geq h\), la constante de Planck.
 
 Si le nombre de paramètres nécessaire est grand, on utilise les probabilité pour définir un état macroscopique.
 L'état macroscopique est donc caractérisé par une densité de probabilité dans l'espace des phases.
@@ -397,7 +398,7 @@ La valeur moyenne d'une grandeur physique f :
 	\overline{f} = \int f(q,p; t) w(q,p;t)dq dp
 \]
 
-L'approche classique est valable si l'action caractéristique du système est très supérieur à \(\hbar\) avec :\\
+L'approche classique est valable si l'action caractéristique du système est très supérieure à \(\hbar\) avec :\\
 (action) \(\equiv\) (Énergie) \(\times\) (temps) ou (Longueur) \(\times\) (quantité de mouvement)
 
 Pour un gaz parfait, on a la vitesse moyenne :
@@ -445,10 +446,11 @@ La moyenne d'ensemble d'une grandeur A est :
 	\overline{A} = \sum_{(\ell)} P_\ell A_\ell
 \]
 
-Tous les ensembles sont pris au même instant, mais en pratique on ne peut prendre qu'un seul système
+Tous les ensembles sont pris au même instant, mais en pratique on ne peut prendre qu'un seul système.
 
 \paragraph{Définition} Principe ergotique
-On postule que dans un système à l'équilibre est :
+
+On postule que dans un système à l'équilibre, la moyenne d'ensemble est :
 \[
 	\overline{A} = \sum_{(\ell)} P_\ell A_\ell = \underset{\tau \rightarrow \infty}{\lim} \dfrac{1}{\tau} \int_0^\tau A(t) dt = \langle A \rangle
 \]
@@ -463,7 +465,7 @@ Propriétés fixées par des contraintes extérieures, valeurs statistiquement c
 
 Propriétés libres de fluctuer au gré de l'agitation microscopique.
 
-Selon les cas, une même grandeur peut être un parmètre extérieur ou une variable interne.
+Selon les cas, une même grandeur peut être un paramètre extérieur ou une variable interne.
 
 \paragraph{Définition} États accessibles
 
@@ -473,11 +475,11 @@ Selon les cas, une même grandeur peut être un parmètre extérieur ou une vari
 
 Pour un système isolé à l'équilibre macroscopique, tous les états accessibles ont la même probabilité.
 
-Soit E l'énergies du système (fixée) et \(\delta E\) l'incertitude macroscopique associée.
+Soit E l'énergie du système (fixée) et \(\delta E\) l'incertitude macroscopique associée.
 
 Les états microscopique accessibles (\(\ell\)) sont ceux qui vérifient toutes les autres contraintes extérieures.
 
-L'ensemble constitué de systèmes isolés identique est appelé ensemble microcanonique. Dans cet ensemble seuls apparaissent les états (\(\ell\)) accessibles et ils apparaissent avec la même fréquence dnas la limite \(\mathcal{N} \rightarrow \infty\), postulat fondamental \(\equiv\) principe du "désordre maximum" :
+L'ensemble constitué de systèmes isolés identiques est appelé ensemble microcanonique. Dans cet ensemble seuls apparaissent les états (\(\ell\)) accessibles et ils apparaissent avec la même fréquence dans la limite \(\mathcal{N} \rightarrow \infty\), postulat fondamental \(\equiv\) principe du "désordre maximum" :
 
 La distribution microcanonique est celle qui maximise l'entropie statistique (On parle de désordre mais ça représente plutot le manque d'information).
 
@@ -531,7 +533,7 @@ On a donc :
 
 On s'intéresse aux changements d'états d'équilibre d'un système isolé.
 
-On prend un gaz isolé dans un volume V, on ouvre une enceinte vide de volume \(\Delta V\), plus d'état son possible, et donc l'entropie va augmenter.
+On prend un gaz isolé dans un volume V, on ouvre une enceinte vide de volume \(\Delta V\), plus d'états sont possibles, et donc l'entropie va augmenter.
 
 La modification de contrainte extérieures augmente l'entropie et le prochain état d'équilibre correspond au nouveau maximum de son entropie.
 
