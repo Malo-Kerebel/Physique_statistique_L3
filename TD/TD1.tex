@@ -1,0 +1,141 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Malo Kerebel}
+
+\usepackage{systeme}
+
+\usepackage[mathscr]{euscript}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, urlcolor=black
+}
+
+\newcommand{\Ens}[1]{\mathbb{#1}}
+\newcommand{\ens}[1]{\mathbb{#1}}
+\newcommand{\fphi}{\quad \forall \varphi \in \mathcal{D}}
+\newcommand{\D}{\ensuremath{\mathcal{D}}}
+
+\input cyracc.def
+\font\tencyr=wncysc10
+\def\cyr{\tencyr\cyracc}
+\def\dc{\mbox{\cyr SH}}
+
+
+\begin{document}
+
+\subsection{Exercice 5}
+
+\[
+	F(v_x, v_y, v_z) = f_1(v_x) \cdot f_2(v_y) \cdot f_3(v_z)
+\]
+
+Si la distribution des vitesse est isotrope on a \(f_1 = f_2 = f_3 = f\), donc F peut se réécrire
+\[
+	F(v_x, v_y, v_z) = f(v_x) \cdot f(v_y) \cdot f(v_z)
+\]
+
+Dans un gaz parfait, l'énergie cinétique permet de classer statistiquement les molécules :
+\[
+	F(v^2_x + v^2_y + v^2_z) = f(v_x) \cdot f(v_y) \cdot f(v_z)
+\]
+
+La fonction de distribution des vitesses suivant x est :
+\[
+	f(v_x) = A_x \cdot e^{-\alpha v_x^2}
+\]
+Sachant qu'il y a isotropie : \(A_x = A_y = A_z = A\)
+
+En point de départ on prend \(A = \sqrt{\dfrac{\alpha}{\pi}}\)
+
+\begin{align*}
+	\left( \int_{-\infty}^{+\infty} \sqrt{\dfrac{\alpha}{\pi}} e^{-\alpha v_x^2} dv_x\right)^2 &= 1\\
+	\dfrac{\alpha}{\pi} \cdot \left( \int_{-\infty}^{+\infty} e^{-\alpha v_x^2} dv_x\right)^2 &= 1\\
+\end{align*}
+
+On fait un changement de variable de coordonnées cartésiennes à polaire :
+\[
+	\left( \int_{-\infty}^{+\infty} A e^{-\alpha v_x^2}\right) \left( \int_{-\infty}^{+\infty} A e^{-\alpha v_y^2} \right) = 1
+\]
+\begin{align*}
+	A^2 \cdot \left( \int_0^{2\pi} \int_0^{+\infty} v \cdot e^{-\alpha v^2} dv d\theta \right) &= 1\\
+	2\pi \cdot A^2 \cdot \left( \int_0^{+\infty} v \cdot e^{-\alpha v^2} dv \right) &= 1\\
+	2\pi \cdot A^2 \cdot \left[ \dfrac{-e^{-\alpha v^2}}{2\alpha} \right]_0^{+\infty} &= 1\\
+	2\pi \cdot A^2 \cdot \left( \dfrac{1}{2\alpha}\right) &= 1 \Leftrightarrow A =  \sqrt{\dfrac{\alpha}{\pi}}
+\end{align*}
+
+\[
+	\langle v_x^2 \rangle = \int_{-\infty}^{+\infty} A_x v_x^2 e^{-\alpha v_x^2} dv_x = -A_x \dfrac{d}{d\alpha}\left( \int_{-\infty}^{+\infty} e^{-\alpha v_x^2} dv_x \right)
+\]
+où \(\left( \int_{-\infty}^{+\infty} e^{-\alpha v_x^2} dv_x \right) = \frac{1}{A} = \sqrt{\frac{\pi}{\alpha}}\)
+Donc :
+\[
+	-A_x \dfrac{d}{d\alpha}\left( \int_{-\infty}^{+\infty} e^{-\alpha v_x^2} dv_x \right) = -A_x \dfrac{d}{d\alpha} \left(\sqrt{\frac{\pi}{\alpha}}\right) = -A_x \dfrac{d}{d\alpha} \left(\sqrt{\pi} \cdot \alpha^{-\frac{1}{2}}\right)
+\]
+\begin{align*}
+	-A_x \dfrac{d}{d\alpha}\left( \int_{-\infty}^{+\infty} e^{-\alpha v_x^2} dv_x \right) &= -\dfrac{1}{2} \cdot A_x \cdot \sqrt{\pi} \cdot \alpha^{-\frac{3}{2}}\\
+	\langle v^2 \rangle = \dfrac{k_B T}{m} &= -\dfrac{1}{2} \cdot A \cdot \sqrt{\pi} \cdot \alpha^{-\frac{3}{2}}\\
+	&= -\dfrac{1}{2} \cdot \sqrt{\alpha} \sqrt{\dfrac{1}{\pi}} \cdot \sqrt{\pi} \cdot \alpha^{-\frac{3}{2}}\\
+	&= -\dfrac{1}{2\alpha}\\
+	\Leftrightarrow A &= \left( \dfrac{m}{2\pi k_B T} \right)^{3/2}
+\end{align*}
+
+Finalement on a la densité de probabilité, la distribution Maxwellienne des vitesses:
+\[
+	G(v) = 4\pi v^2 \cdot \left( \dfrac{m}{2\pi k_B T}\right)^{3/2} \cdot e^{-\dfrac{mv^2}{2k_B T}}
+\]
+
+\begin{align*}
+	\langle v \rangle &= \int_0^{+\infty} v \cdot G(v) dv\\
+	&=  \int_0^{+\infty} C \cdot	v^3 \cdot e^{-\dfrac{mv^2}{2k_B T}} dv\\
+	&= \sqrt{\dfrac{8k_B T}{\pi m}}
+\end{align*}
+L'intégration par partie fonctionne pour faire ce calcul.
+
+Mais on va le faire avec la fonction \(\Gamma\) d'Euler. Elle s'écrit :
+\[
+	\Gamma(z) = \int_0^{+\infty} t^{z-1} \cdot e^{-t} dt
+\]
+\[
+	\Gamma(z + 1) = z \cdot \Gamma(z) 
+\]
+
+On met \(\langle v \rangle\) sous la forme d'une fonction d'Euler :
+
+\begin{align*}
+	\langle v \rangle &= \int_0^{\infty} C \cdot v^3 \cdot e^{-\dfrac{mv^2}{2k_B T}} dv\\
+	&= \dfrac{C}{2a} \int_0^{\infty} te^{-t} dt = \dfrac{C}{2a^2} \Gamma(2)\\
+	a &= \dfrac{m}{2k_B T}\\
+	C &= 4\pi \cdot \left( \dfrac{m}{2k_B T}\right)^\frac{3}{2}
+\end{align*}
+
+Or \(\Gamma(2) = \Gamma (1 + 1) = 1 \cdot \Gamma(1) = \int_0^{+\infty} e^{-t} dt = 1\) et une fois qu'on remplace dans l'expression on retrouve le même résultat que précedemment.
+
+Pour trouver la vitesse quadratique moyenne on utilise de nouveau la fonction d'Euler.
+\begin{align*}
+	\langle v^2 \rangle &= \int_0^{+\infty} C \cdot v^4 \cdot e^{-\dfrac{mv^2}{2k_B T}} dv\\
+	&= C \int_0^{+\infty} \dfrac{t^2}{a^2}e^{-t} \dfrac{dt}{2av}\\
+	&= C \int_0^{+\infty} \dfrac{t^2}{a^3} \sqrt{\dfrac{a}{t}} e^{-t} dt\\
+	&= \dfrac{C}{2a^{5/2}} \int_0^{+\infty} t^{3/2} e^{-t} dt\\
+	&= \dfrac{C}{2a^{5/2}} \Gamma\left(\dfrac{5}{2}\right)\\
+	\Gamma\left(\dfrac{5}{2}\right) &= \dfrac{3\sqrt{\pi}}{4}\\
+\end{align*}
+\begin{align*}
+	\langle v^2 \rangle &= \dfrac{3\sqrt{\pi}}{4} \cdot \dfrac{C}{2a^{5/2}}\\
+	&= \dfrac{3}{4} \dfrac{\sqrt{\pi} \cdot \pi \cdot \left( \dfrac{m}{2k_B T}\right)^\frac{3}{2}}{\dfrac{m}{2k_B T}^{5/2}}\\
+	&= \dfrac{3}{4} \dfrac{\sqrt{\pi} \cdot \pi}{m\dfrac{1}{2k_B T}}\\
+	&= \dfrac{3}{2} \dfrac{\sqrt{\pi} \cdot \pi k_B T}{m}\\
+\end{align*}
+
+
+
+\end{document}
