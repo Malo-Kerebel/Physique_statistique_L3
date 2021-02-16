@@ -568,7 +568,175 @@ On a \(E_2 = E-E_1\), donc :
 \]
 
 \begin{center}
-\textbf{CM7 (2021-02-**)}
+\textbf{CM7 (2021-02-16)}
 \end{center}
 
+QCM du début de scéance (J'ai pas eu le temps de corriger les questions avant la 11)
+
+\paragraph{question 11}
+
+P face 5 fois d'affilé :
+
+1/32
+
+\paragraph{question 12}
+
+proba de 3 face sur 5 lancé:
+
+\[
+	P = C^5_3 * 0.5^5 = 5/16
+\]
+
+\paragraph{question 13}
+
+9 plaques de 1 à 9 combien de nombre impaire de 3 chiffres différents :
+
+On prend le nombre en décimale abc, pour que le nombre soit impaire, c = 1, 3, 5, 7 ou 9. Pour b, on a plus que 8 choix, et pour a plus que 7 choix. Le nombre totale :
+\[
+	5 \times 8 \times 7 = 280
+\]
+
+\paragraph{Question 14}
+
+Une voiture de 3 place, combien de façon d'installer 6 personne dont seuleument 2 ont le permis. Le conducteur on a deux choix, pour le passager avant on a 5 choix, pour le passager arrière on a 4 choix:
+\[
+	= 2 \times 5 \times 4 = 40
+\]
+
+\paragraph{Question 15}
+
+Installer 3 filles et 3 garçon sur un banc, on a 
+\[
+	3! \times 2! \times 2 = 72 
+\]
+
+\paragraph{Question 16}
+
+Loi binomiale :
+\[
+	P(N, n) = \dfrac{N!}{n!(N-n)!} p^n \times q^{N-n}
+\]
+
+\paragraph{Question 17}
+
+Moyenne de la loi binomiale : \(pN\)
+
+\paragraph{Question 18}
+
+Distribution Gausienne :
+\[
+	\omega_G(x) = \dfrac{1}{\sqrt{2\pi \sigma^2}} e^{-\dfrac{(x - x_0)^2}{2\sigma^2}}
+\]
+
+\paragraph{Question 19}
+
+L'écart type le plus grand est quand la fonction est aplatie donc courbe bleu foncé
+
+\paragraph{Question 20}
+
+L'entropie statistique mesure le manque d'information sur le système
+
+\paragraph{Question 21}
+
+L'entropie statistique est :
+\[
+	S(P_1, P_2, \cdots, P_M) = -k \sum_{m=1}^M P_m \ln(P_m)
+\]
+
+\paragraph{Question 22}
+
+L'entropie statistique ne peut pas être négative (car la constante de Boltzmann n'est pas négative)
+
+\paragraph{Question 23}
+
+L'entropie statistique est maximale lorsque tous les évenements ont la même probabilité de se produire
+
+\paragraph{Question 24}
+
+Une approximation de \(\ln(N!)\) est :
+\[
+	\ln(N!) = N \ln(N) - N
+\]
+
+Retour au cours :
+
+\[
+	T_1^\star = T_2^\star
+\]
+\[
+	\dfrac{1}{C_{V_1}} + \dfrac{1}{C_{V_2}} > 0
+\]
+
+
+Si \(C_{V_1} \gg C_{V_2}\) (La capacité calorifique à volume constant)
+\subsubsection{Conséquence}
+	La capacité calorifique est positive à l'équilibre \(\Leftrightarrow T^\star\) d'un système est 	fonction croissante de son énergie.
+
+	\((\Delta E_1)^2 = \sigma^2_{E_1} = kT^2 C_{V_1}\)
+	\(\Rightarrow\) la capacité calorifique reflète les fluctuations de \(E_1\), c'est le théorème de 	fluctuation dissipation
+
+\begin{align*}
+	&T_1^\star (E_1) \nearrow \text{ Est croissante en focntion de } E_1\\
+	&T_2^\star (E_2) \nearrow \text{ mais } T_2^\star (E_1) \searrow\\
+\end{align*}
+
+La chaleur passe du système de température microcanonique la plus élévé à celui de température plus basse
+
+Ça implique le deuxième principe de la thermodynamique.
+\subsubsection{deuxième principe de la thermodynamique}
+
+	La chaleur s'écoule du corps le plus "chaud" vers celui le plus "froid"
+
+\quad \\ %C'est moche de faire ça mais ça rend plus joli rapidement
+La temérature microcanonique \(T^\star\) a donc les caractéristiques habituelles d'une température.
+
+\paragraph{Remarque} Si \(C_V\) indépendate de la température
+
+\[
+	E_1 + E_2 = E \Rightarrow C_{V_1} T_1^{ini} + C_{V_2} T_2^{ini} = (C_{V_1} + C_{V_2}) T^f
+\]
+\[
+	\Rightarrow T^f = \dfrac{C_{V_1} T_1^{ini} + C_{V_2} T_2^{ini}}{C_{V_1} + C_{V_2}}
+\]
+
+Dans le cas ou \(mathcal{S}_2\) est un thermostat alors : \(T^f \approx T_2^{ini}\)
+
+\(\Rightarrow\) le thermostat impose sa température
+
+On reprend notre exemple de deux volumes séparé par une paroi mais désormais la paroi peut être mobile, il peut y avoir un échange d'énergie sous forme mécanique
+
+À l'équilibre mécanique on a :
+\[
+	\dfrac{p_1^\star}{T_1^\star} = \dfrac{p_2^\star}{T_2^\star}
+\]
+
+\paragraph{Démonstation} \quad \par
+
+Avant contact, \(V_1\) et \(V_2\) sont des paramètres extérieurs. Après contact, \(V = V_1 + V_2\) reste fixé et est un paramètre extérieur, mais comme la paroi peut se déplacer, \(V_1\) (ou \(V_2\)) devient un paramètre interne
+
+À l'équilibre, l'entropie microcanonique partielle \(s^\star (V_1)\) est maximale : \(\Rightarrow \dfrac{\partial s^\star}{\partial V_1} = 0\)
+
+\begin{align*}
+	s^\star (V_1) = k \ln (\omega(V_1)) &= k \ln\left[ \Omega_1 (V_1) \Omega_2 (V_2 = V-V_1) \right]\\
+	&= S_1^\star (V_1) + S_2^\star (V - V_1)\\
+	\dfrac{\partial s^\star}{\partial V_1} = 0 \Rightarrow \dfrac{\partial S_1^\star}{\partial V_1} + \dfrac{\partial S_2^\star}{\partial V_1} &= 0\\
+	\dfrac{p_1^\star}{T_1^\star} + \dfrac{\partial S_2^\star}{\partial V_2} \dfrac{\partial V_2}{\partial V_1} &= 0\\
+	\dfrac{p_1^\star}{T_1^\star} - \dfrac{p_2^\star}{T_2^\star} &= 0 \text{ car } V_2 = V - V_1\\
+	&\Rightarrow \dfrac{p_1^\star}{T_1^\star} = \dfrac{p_2^\star}{T_2^\star}
+\end{align*}
+
+Si la paroi est diatherme on a \(T_1^\star = T_2^\star \Rightarrow p^\star_1 = p^\star_2\)
+
+Condition de stabilité \(s^\star_{max}) \Leftrightarrow \dfrac{\partial^2 s}{\partial V_1^2} < 0\)
+
+\(\Rightarrow \) à T constante \(p_1\) est une fonction \(\searrow\) croissante du volume \(V_1\)
+
+
+Le sens des échanges de volumes est celui qui égalise les pressions. \(\Rightarrow\) le système qui a la pression initiale la plus grande est celui qui gagne du volume.
+
+On exprime la compressibilité :
+\[
+	\chi = - \dfrac{1}{V} \dfrac{\partial V}{\partial P} > 0
+\]
+\(\left( \text{On met un signe moins car } \dfrac{\partial V}{\partial P} < 0 \right)\)
 \end{document}
