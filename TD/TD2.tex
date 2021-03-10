@@ -1,0 +1,242 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Malo Kerebel}
+
+\usepackage{systeme}
+
+\usepackage[mathscr]{euscript}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black, urlcolor=black
+}
+
+\newcommand{\Ens}[1]{\mathbb{#1}}
+\newcommand{\ens}[1]{\mathbb{#1}}
+\newcommand{\fphi}{\quad \forall \varphi \in \mathcal{D}}
+\newcommand{\D}{\ensuremath{\mathcal{D}}}
+
+\input cyracc.def
+\font\tencyr=wncysc10
+\def\cyr{\tencyr\cyracc}
+\def\dc{\mbox{\cyr SH}}
+
+
+\begin{document}
+
+\section{Dénombrement d'états}
+
+\subsection{particules discernables}
+Les seuls type de combinaisons possibles sont :
+\begin{align*}
+	1-2-3\\
+	1-1-4\\
+	2-2-2
+\end{align*}
+
+Pour \(1-2-3\) on peut mettre dans l'ordre que l'on veut, il y a donc 3! = 6 combinaisons possibles. Pour \(1-1-4\), on peut mettre le 4 à chaque particule, il y a donc 3 combinaisons possibles. Pour \(2-2-2\), on ne peut mélanger les énergies, il n'y a donc qu'une seule combinaison possible. Au total il y a donc 10 combinaisons possibles.
+
+\subsection{Boson}
+
+Pour des bosons de spin nul, ils ne sont plus discernables. Donc il n'y a plus que la possibilité 1-2-3, 1-1-4 et 2-2-2, avec une seule possibilité pour chaque donc il n'y a que 3 possibilités.
+
+\subsection{fermions}
+
+On utilise la formule :
+\[
+	\Omega = \sum_{conf} \prod_r \dfrac{g_r!}{n_r!(g_r-n_r)!}
+\]
+exemple :
+
+Pour \(1-1-4\), pour 1, on a \(n_r = 2\) car il y a deux fermions à ce niveau d'énergie.
+\[
+	\Omega^{(1-1-4)} = \left( \dfrac{2!}{2! (2-2)!} \right)^2 \cdot \dfrac{2!}{1!(2-1)!} = 1^2 \cdot 2 = 2
+\]
+Pour (1-2-3) on a \(n_r = 1\) car il n'y a que 1 fermions par niveau d'énergie. 
+\[
+	\Omega^{(1-2-3)} = \left( \dfrac{2!}{2!(2-2)!} \right)^3 = 8
+\]
+
+Il y a donc 10 combinaisons possibles
+
+\section{Particules dans un puits infinis}
+
+\subsection{énergies des états stationnaires}
+
+\[
+	E = (n_1^2 + n_2^2 +n_3^2)\varepsilon_0
+\]
+Avec \(n_1, n_2, n_3 > 0\)
+
+\subsection{\(E = 33\varepsilon_0\)}
+
+Il y a 6 micro-états accessibles. 4-4-1 et 5-2-2
+
+\subsection{Particules indiscernables}
+
+\subsubsection{s = 0}
+La formule est :
+
+\[
+	\Omega^B = \prod_r \dfrac{(n_r + g_r -1)!)}{n_r!-g_r-1)!}
+\]
+Avec \(g_r = 1\) car les états sont indiscernables.
+Ici on a :
+\[
+	\Omega^{(1-4-4)} = \Omega^{(5-2-2)} = \dfrac{(1+1-1)!}{1!0!} \times \dfrac{(2+1-1)!}{2!0!} = 1
+\]
+
+Il y a donc deux combinaisons
+
+\subsubsection{s = 1}
+
+ici \(g_r = 3\)
+
+\begin{align*}
+	\Omega^{(1-4-4)} = \Omega^{(5-2-2)} &= \dfrac{(1+3-1)!}{1!(3-1)!} \times \dfrac{(2+3-1)!}{2!(3-1)!}\\
+	&= \dfrac{3!}{2!} \times \dfrac{4!}{2!2!}\\
+	&= 3 \times \dfrac{24}{4}\\
+	&= 3 \times 6 = 18
+\end{align*}
+
+Il y a donc 36 configurations.
+
+\subsubsection{s = 1/2}
+
+Il y a donc \(g_r = 2\), on a donc :
+\begin{align*}
+	\Omega^{(1-4-4)} = \Omega^{(5-2-2)} &= \dfrac{2!}{1!(2-1)!} \times \dfrac{2!}{2!(1-1)!}\\
+	&= \dfrac{2!}{1!} \times \dfrac{2!}{2!0!}\\
+	&= 2 \times 1\\
+	&= 2
+\end{align*}
+
+Il y a donc 4 configurations
+
+\subsubsection{s = 3/2}
+
+Il y a donc \(g_r = 4\), on a donc :
+\begin{align*}
+	\Omega^{(1-4-4)} = \Omega^{(5-2-2)} &= \dfrac{4!}{1!(4-1)!} \times \dfrac{4!}{2!(4-2)!}\\
+	&= \dfrac{4!}{3!} \times \dfrac{4!}{2!2!}\\
+	&= 4 \times \dfrac{12}{2}\\
+	&= 4 \times 6 = 24
+\end{align*}
+
+Il y a donc 24 configurations
+
+\section{Interaction cubique}
+
+\subsection{}
+
+Pour l'énergie : \(12\varepsilon_0\), on prend le sextuplet : (1,1,1,1,2,2), de même pour l'énergie : \(18\varepsilon_0\), on peut utiliser le sextuplet : (2,2,2,2,1,1).
+Dans ces deux cas, il faut choisir la position à 2 niveaux  (\(2\varepsilon_0\) pour la boite A et \(\varepsilon_0\) pour la boite B).
+On a donc :
+\[
+	\Omega_A = \Omega_B = C_6^2 = \dfrac{6!}{4! \cdot 2!} = 15
+\]
+
+\subsection{}
+
+Les boites sont indépendantes, il y a donc :
+\[
+	15 \times 15 = 225
+\]
+états possibles.
+
+\subsection{}
+
+Les énergies possibles pour une particules sont :
+
+\begin{center}
+
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline 
+		E(\(\varepsilon_0\) & 3 & 6 & 9 & 11 & 12 & 14 \\ 
+		\hline 
+		Triplet & 1,1,1 & 1,1,2 & 1,2,2 & 1,1,3 & 2,2,2 & 1,2,3 \\ 
+		\hline 
+	\end{tabular}
+
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		E(\(\varepsilon_0\) & 17 & 18 & 19 & 21 \\
+		\hline
+		Triplet & 2,2,3 & 1,1,4 & 3,3,1 & 1,2,4\\
+		\hline
+	\end{tabular}
+
+\end{center}
+
+Les seules manières d'obtenir \(30\varepsilon_0\) sur l'ensemble des boites A et B mise en contact sont :
+6-24, 9-21, 12-18, 15-15 
+
+Et inversement on peut mettre la boite B les énergies de la boite A.
+Les états possibles sont donc :
+
+\begin{center}
+
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline 
+		\(E_A(\varepsilon_0)\) & 6 & 9 & 12 & 15 & 18 & 21 & 24 \\ 
+		\hline 
+		\(E_B(\varepsilon_0)\) & 24 & 21 & 18 & 15 & 12 & 9 & 6 \\
+		\hline
+		\# & 31 & 72 & 225 & 400 & 225 & 72 & 31\\
+		\hline 
+		P & $\frac{31}{1056}$ & $\frac{72}{1056}$ & 	$\frac{225}{1056}$ & $\frac{400}{1056}$ 	& $		\frac{225}{1056}$ & $\frac{72}	{1056}$ & $	\frac{31}{1056}$ \\ 
+		\hline 
+	\end{tabular}
+
+\end{center}
+
+\subsection{}
+
+On peut désormais calculer l'énergie moyenne :
+
+\begin{align*}
+	&\sum E_A \times P_A = \dfrac{1}{1056} \times \sum E_A \cdot \#\\
+	&= \dfrac{1}{1056} \times \left( 31 \cdot 6 + 72 \cdot 9 + 225 \cdot 12 + 400 \cdot 15 + 225 \cdot 18 + 72 \cdot 21 + 31 \cdot 24\right)
+\end{align*}
+
+\begin{align*}
+	\sum E_A \cdot \# &= 15~840\\
+	P &= 15
+\end{align*}
+
+\subsection{}
+
+On calcule l'entropie :
+\[
+	S_f - S_i = k_B \cdot \ln \left( \dfrac{\Omega_f}{\Omega_i} \right)
+\]
+Avec \(\Omega_f = 1~056\) et \(\Omega_i = 225\), on a donc l'entropie :
+\[
+	S_f - S_i = k_B \cdot \ln\left(\dfrac{1056}{225}\right)
+\]
+
+\subsection{Oscillateur harmonique isotrope}
+
+L'énergie d'un oscillateur harmonique à 3 dimensions est donnée par la relation :
+\[
+	E = \left( n_x + n_y + n_z + \dfrac{3}{2} \right) \hbar \cdot \omega
+\]
+
+Ici on autorise les énergies nulles, ça induit une dégénérescence de 3 dans tout le problème.
+Les 5 premiers niveaux d'énergies sont donc :
+\[
+	E = \frac{3}{2}\hbar \omega,\frac{5}{2}\hbar \omega,\frac{7}{2}\hbar \omega,\frac{9}{2}\hbar \omega,\frac{11}{2}\hbar \omega,
+\]
+
+
+
+\end{document}

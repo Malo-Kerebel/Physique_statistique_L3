@@ -35,7 +35,7 @@
 	\vspace{2cm}
 	{\Large\itshape Malo Kerebel \par}
 	\vfill
-	Cours par\par
+	Cours par\par2
 	Jean-Philippe \textsc{Jay}
 
 	\vfill
@@ -739,4 +739,113 @@ On exprime la compressibilité :
 	\chi = - \dfrac{1}{V} \dfrac{\partial V}{\partial P} > 0
 \]
 \(\left( \text{On met un signe moins car } \dfrac{\partial V}{\partial P} < 0 \right)\)
+
+\begin{center}
+\textbf{CM8 (2021-03-02)}
+\end{center}
+
+À l'équilibre chimique :
+\[
+	\dfrac{\mu_1^\star}{T_1^\star} = \dfrac{\mu_2^\star}{T_2^\star}
+\]
+\[
+	\Rightarrow \mu_1^\star = \mu_2^\star
+\]
+
+Ainsi : $\\mu_1^\star$ est fonction $\nearrow$ du volume
+
+\subsubsection{Exemple d'application, système à 2 niveaux}
+
+Assemblée de N, (avec $N \gg 1$) particules sans interaction mutuelle
+
+1 particule ne peut occuper que 2 états, état 1 d'énergie $-\varepsilon$ et 2 d'énergie $\varepsilon$
+
+L'énergie totale est :
+\[
+	E = N_1 \varepsilon_1 + N_2 \varepsilon_2 = -(N_1 - N_2)\varepsilon =-(2N_1 - N) \varepsilon
+\]
+
+Comme l'énergie ne dépend que du nombre total de particules dans l'état 1 (ou 2):
+\[
+	\Omega = C_N^{N_1} = C_N^{N_2}
+\]
+
+\begin{align*}
+	S^\star(E) &= k_B \ln \Omega\\
+	&= k_B \ln \left( \dfrac{N!}{N!(N-N_1)!} \right)\\
+	&= k_B [ N \ln N - N - [ N_1 \ln N_1 - N_1 \cdots - (N - N_1)]]\\
+	&= k_B [ N \ln N - N_1 \ln N_1 - (N -N_1) \ln (N-N_1)]\\
+	&= k_B [N \ln N - N_1 \ln N_1 - N_2 \ln N_2]
+\end{align*}
+Avec $P = N_1 -N_2$ et $N = N_1 + N_2$
+\begin{align*}
+	S^\star = k_B [N  \ln N - \left( \dfrac{P + N}{2} \right)\ln\left( \dfrac{P + N}{2} \right) - \left( \dfrac{N - P}{2} \right) \ln \left( \dfrac{N - P}{2} \right)]
+\end{align*}
+
+Température :
+\[
+	\dfrac{1}{T^\star} = \dfrac{\partial S^\star}{\partial E} = k_B \left[ \dfrac{1}{2 \varepsilon} \ln \left( \dfrac{N -E/\varepsilon}{2} \right) - \left( \dfrac{N - E/\varepsilon}{2} \ln \right) \right]
+\]
+On mijote
+\[
+	\dfrac{1}{T^\star} = \dfrac{k_B}{2 \varepsilon} \ln \left( \dfrac{N + P}{N-P} \right)
+\]
+Ou aussi :
+\[
+	\dfrac{1}{T^\star} = \dfrac{k_B}{2 \varepsilon} \ln \left( \dfrac{N_1}{N_2} \right)
+\]
+Remarque si $N_1 < N_2 \Rightarrow T^\star < 0$
+
+\[
+	E = -N\varepsilon \tanh (\varepsilon/kT^\star)
+\]
+$\varepsilon = $ température caractéristique de système $= \theta$
+$E = -N \varepsilon \tanh(\theta/T)$
+
+Si la température diminue, toutes les particules vont passer à l'état de plus faible énergie
+
+\begin{center}
+\textbf{CM8 (2021-03-10)}
+\end{center}
+
+\subsubsection{Exemple : Gaz parfait monoatomique}
+
+Pour N particules sans intéraction dans une boite de volume V le nombre d'états dont l'énergie est < E (voir chapitre 1 $ \varphi (E) $) ne prend pas en compte l'indiscernabilité !
+
+On a vu aussi que dans le cas dilué, le dénombrement pour les fermions et les bosons est quasi identique à celui de particules discernables ( si on divise par $ N!$)
+
+En pratique pour le gaz parfait on est bien dans ce cas dilué ( $ \ell \gg \lambda $) et il aut en fait prendre 
+\[
+	\varphi (E) = \dfrac{1}{N!}\dfrac{V^N C_{3N} (2 m E)^{3N/2}  }{h^{3N}}
+\]
+
+Le facteur $\dfrac{1}{N!}$ est très important, si on ne le prend pas en compte, S n'est plus une valeur extensive ! De plus on a le paradoxe de Gibbs,
+
+On en déduit :
+\[
+	S^\star = k_B \ln(\varphi(E) = k_B N \left[ \dfrac{3}{2} \ln\dfrac{E}{N} + \ln \dfrac{V}{N} + \dfrac{3}{2} \ln \left( \dfrac{4\pi m}{3h^2} \right) + \dfrac{5}{2} \right]
+\]
+
+Avec cette expression, on peut vérifier que c'est bien une valeur extensive extensive :
+\begin{align*}
+	E &= \dfrac{3}{2} N k_B T^\star\\
+	P^\star V &= N k_B T^\star = \dfrac{2}{3} E
+\end{align*}
+
+\chapter{Ensemble canonique}
+
+Dans le canonique, on va avoir des échanges possible entre le système et les thermostat. Ce thermostat va imposer la température au système.
+
+\begin{itemize}
+	\item $N_\mathcal{T} \gg N_\mathcal{S}$
+	\item $E_\mathcal{T} \gg E_\mathcal{S}$
+	\item $C_\mathcal{T} \gg C_\mathcal{S}$ 
+\end{itemize}
+
+Lorsque le système $\mathcal{S}$ est en contact avec le thermostat $\mathcal{T}$, on dit qu'on a un ensemble canonique.
+
+À la différence du microcanonique, Le système n'est pas isolé, la température ne peut pas changer mais l'énergie est une variable interne.
+
+On va adopter la convention, $\ell$ l'état microcanonique du système, L l'état microcanonique du thermostat, l'union du système et du thermostat est dans un état microcanonique.
+
 \end{document}
