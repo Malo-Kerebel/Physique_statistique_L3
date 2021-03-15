@@ -17,6 +17,8 @@
 }
 \usepackage{mathrsfs}
 
+\usepackage{tikz}
+
 %Macro
 \newcommand{\ens}[1]{\mathbb{#1}}
 
@@ -34,6 +36,11 @@
 	{\huge\bfseries Physique statistique\unskip\strut\par}
 	\vspace{2cm}
 	{\Large\itshape Malo Kerebel \par}
+	
+	\vfill
+
+	\includegraphics[scale=0.25]{monkey_mijote.jpg}	
+	
 	\vfill
 	Cours par\par2
 	Jean-Philippe \textsc{Jay}
@@ -847,5 +854,200 @@ Lorsque le système $\mathcal{S}$ est en contact avec le thermostat $\mathcal{T}
 À la différence du microcanonique, Le système n'est pas isolé, la température ne peut pas changer mais l'énergie est une variable interne.
 
 On va adopter la convention, $\ell$ l'état microcanonique du système, L l'état microcanonique du thermostat, l'union du système et du thermostat est dans un état microcanonique.
+
+\begin{center}
+\textbf{CM9 (2021-03-15)}
+\end{center}
+
+\[
+	P_\ell^C = \dfrac{\Omega_\mathcal{T} (E_\mathcal{T} = E_{tot} - E_\ell}{\Omega_{\mathcal{S} U \mathcal{T}}(E_{tot})}
+\]
+
+\[
+	P_\ell^{C} = C \Omega_\mathcal{T} (E_t - E_\ell)
+\]
+Comme l'entropie est \(S_\mathcal{T}^\star (E_t - E_\ell) = k_B \ln \Omega_\mathcal{T} (E_t - E_\ell)\)
+\[
+	\Rightarrow \Omega_\mathcal{T} (E_t - E_\ell) = e^{\left[ \dfrac{1}{k_B} S_\mathcal{T}^\star (E_t - E_\ell) \right]}
+\]
+\(E_T \gg E_\ell \Rightarrow \) on fait un développement limité de \( S_\mathcal{T}^\star\) au voisinage de \(E_T\)
+\[
+	S_\mathcal{T}^\star (E_t - E_\ell) \simeq S_\mathcal{T}^\star (E_T) - E_\ell \dfrac{\partial S_\mathcal{T}^\star}{\partial E_\mathcal{T}}
+\]
+
+\[
+	P_\ell^C = \dfrac{1}{Z} e^{\dfrac{-1}{k_B} \dfrac{E_\ell}{T}}
+\]
+
+On note \(\beta = \dfrac{1}{k_B} \equiv \left[ \dfrac{1}{\text{énergie}}\right] \Rightarrow P_\ell^{C} = \dfrac{1}{Z} e^{-\beta E_\ell}\)
+
+Il faut normaliser les probas, donc :
+\[
+	Z = \sum_{état} e^{-\beta E_\ell}
+\]
+
+\(Z\) est la fonction de partition.
+
+Dans le cas où on aurait de la dégénérescence, on a un facteur \(g(E_\ell\) en plus :
+\[
+	P^C (E_\ell) = g(E_\ell \dfrac{1}{Z} e^{\dfrac{-1}{k_B} \dfrac{E_\ell}{T}}
+\]
+et :
+\[
+	Z = \sum_{état} e^{-\beta E_\ell}
+\]
+
+Si un intervalle \(\delta E\) contiennent un grand nombre de niveaux et si \(kT \gg \vert E_\ell - E_{\ell \pm 1} \vert\), on peut transformer la somme discrète par un intégrale :
+\[
+	Z = \int_{E_0}^{+\infty} \rho(E) e^{-E/k_BT}dE
+\]
+Où \(E_0\) est l'énergie du fondamental
+
+\[
+	\overline{E^C} = \int_{E_0}^{+\infty} E w^C(E) dE = \dfrac{1}{Z} \int_{E_0}^{+\infty} E \rho(E) e^{-E/k_BT}dE
+\]
+
+Comme \(w^C(E)\) croit exponentiellement avec l'énergie mais \(e^{-E/k_BT}\) décroit exponentiellement avec l'énergie, donc on a au final approximativement une gaussienne. avec un variance \((\Delta E)^2 = ET^2 C_V\)
+
+On définit, l'énergie libre F du système par :
+\[
+	F(T, x) = F = -k_B T \ln E(T,x)
+\]
+
+\paragraph{Remarque } :
+
+Dans le microcanonique, les propriété du systèmes sont déterminées par \(\Omega\) ou par \(S^\star = k_B \ln \Omega\)
+
+Dans le canonique, c'est \(Z\) ou \(F = -k_B T \ln Z\) qui jouent ce rôle
+
+\begin{itemize}
+	\item F = énergie libre, F(n, V, T)
+	\item U = énergie interne, U(n, V, S)
+	\item H = enthalpie, H(n, P, S)
+	\item G = enthalpie libre, G(n, P, T)
+\end{itemize}
+
+Phrase mnémotechnique :
+
+Good physicist have studied under very fine teachers
+\begin{center}
+
+\begin{tikzpicture}
+
+	\draw (0,0) circle (1);
+	\draw (-1, 0) -- (1, 0);
+	\draw (0,-1) -- (0,1);
+	\node[align = left] at (0,1.25) {Teachers};
+	\node[align = left] at (1.3,.75) {Good};
+	\node[align = left] at (2,0) {Physicists};
+	\node[align = left] at (1.3,-0.75) {Have};
+	\node[align = left] at (0,-1.25) {Studied};
+	\node[align = left] at (-1.4,-0.75) {Under};
+	\node[align = left] at (-1.5,0) {Very};
+	\node[align = left] at (-1.3,0.75) {Fine};
+	
+\end{tikzpicture}
+
+\end{center}
+H = U + PV\\
+F = U - TS\\
+F = G - PV\\
+etc ...
+
+L'énergie moyenne canonique \(\overline{E^C}\) est par définition :
+\[
+	\overline{E^C} = \sum_{(\ell)} E_ell P_\ell \text{ avec } P_\ell = \dfrac{1}{Z} e^{-E_\ell / k_B T}
+\]
+
+\[
+	\overline{E^C} = \dfrac{1}{Z} \sum_{(\ell)} E_\ell e^{-\beta -E_\ell}
+\]
+
+On a \(\dfrac{\partial}{\partial \beta} \left(e^{-\beta E_\ell}\right) = -E_\ell e^{-\beta E_\ell}\), ainsi on a :
+\[
+	\overline{E^C} = \dfrac{-1}{Z} \sum_{(\ell)} \dfrac{\partial}{\partial \beta} e^{-\beta E_\ell} = \dfrac{-1}{Z} \dfrac{\partial}{\partial \beta} \underbrace{\sum_{(\ell)} e^{-\beta E_\ell}}_Z 
+\]
+\[
+	\overline{E^C} = \dfrac{-1}{Z} \dfrac{\partial Z}{\partial \beta}
+\]
+
+On relie le tout à l'énergie libre :
+\[
+	F = -k_B T \ln Z \Rightarrow \ln Z = \dfrac{-F}{k_B T} = -\beta F
+\]
+
+On mijote,
+
+\[
+	\overline{E^C} = D + \beta  \dfrac{\partial Z}{\partial \beta} = F  - T\left(  \dfrac{\partial Z}{\partial T} \right)
+\]
+
+La capacité calorifique à volume constant : \(C_V = \left.  \dfrac{\partial overline{E^C}}{\partial T} \right)_{V, N} \)
+
+\begin{align*}
+	\overline{E^C} &= - \dfrac{\partial \ln Z}{\partial \beta}\\
+	C_V &= \dfrac{\partial \overline{E^C}}{\partial T} = \dfrac{\partial \overline{E^C}}{\partial \beta} \dfrac{\partial \beta}{\partial T}\\
+	C_V &= \dfrac{\partial^2 \ln Z}{\partial \beta^2} \dfrac{1}{k_B T^2}
+\end{align*}
+
+On mijote et on trouve :
+\[
+	k_B T^2 C_V = -\dfrac{1}{z^2} \left( \dfrac{\partial Z}{\partial \beta} \right)^2 + \dfrac{1}{z} \dfrac{\partial^2 Z}{\partial \beta^2}
+\]
+
+Avec \( \overline{E^C} = - \dfrac{\partial \ln Z}{\partial \beta} = -\dfrac{1}{z}  \dfrac{\partial Z}{\partial \beta} \Rightarrow -\dfrac{1}{z^2} \left( \dfrac{\partial Z}{\partial \beta} \right)^2 = - \left( \overline{E^C} \right)^2 \)
+
+\[
+	\overline{E^2} = \sum_{(\ell)} E_\ell^2 P_\ell = \sum_{(\ell)} E_\ell^2 \dfrac{1}{Z} e^{-\beta E_\ell}
+\]
+
+On a déjà utilisé :
+\begin{align*}
+	\dfrac{\partial}{\partial \beta} e^{-\beta E_\ell} &= - E_\ell e^{-\beta E_\ell}\\
+	\dfrac{\partial^2}{\partial \beta^2} e^{-\beta E_\ell} &= - E_\ell^2 e^{-\beta E_\ell}\\
+\end{align*}
+
+\[
+	\Rightarrow \overline{E^2} = \dfrac{1}{Z} \sum_{(\ell)} E_\ell^2 e^{-\beta E_\ell} = \dfrac{1}{Z} \sum_{(\ell)} \dfrac{\partial^2}{\partial \beta^2} e^{-\beta E_\ell}
+\]
+\[
+	\overline{E^2} =  \dfrac{1}{Z} \dfrac{\partial^2 Z}{\partial \beta^2}
+\]
+
+\[
+	k_B T^2 C_V = -\dfrac{1}{Z} \left( \dfrac{\partial Z}{\partial \beta}\right)^2 + \dfrac{1}{Z} \dfrac{\partial^2 Z}{\partial \beta^2}
+\]
+
+\[
+	k_B T^2 C_V = \overline{E^2} - \left(\overline{E}\right)^2 = \sigma_E^2 = \text{ La variance}
+\]
+
+L'entropie en canonique :
+\[
+	S^C = -k_B \sum_{(\ell)} P_\ell^2 \ln P_\ell^2
+\]
+
+Avec \(P_\ell^2 = \dfrac{1}{Z} e^{-\beta E_\ell}\) et \(F = -k_B T \ln Z\)
+
+On mijote :
+
+\begin{align*}
+	S^C &= k_B \ln Z \sum_{(\ell)} \dfrac{1}{Z} e^{-\beta E_\ell} + \dfrac{k_B}{k_B T} \sum_{(\ell)} E_\ell \dfrac{1}{Z} e^{-\beta E_\ell}\\
+	S^C &= k_B \ln Z \sum_{(\ell)} P_\ell^C + \dfrac{1}{T} \sum_{(\ell)} E_\ell P_\ell^C\\
+	S^C &= k_B \ln Z + \dfrac{\overline{E^C}}{T}\\
+	S^C &= \dfrac{1}{T} \left( \overline{E^C} - F \right)\\
+	\Leftrightarrow F &= \overline{E^C} - T_{S^C}
+\end{align*}
+
+Avec Helmohltz : \(\overline{E^C} = F - T\left( \dfrac{\partial F}{\partial T} \right)\)
+
+\[
+	S^C = \dfrac{1}{T} \left( \overline{E^C} - F \right) = - \dfrac{\partial F}{\partial T}
+\]
+
+On a donc le même lien entre \(S^C\) et \(F\) qu'en thermo classique
+\[
+	S = \left. \dfrac{-\partial F}{\partial T}\right|_{V, N}
+\]
 
 \end{document}
