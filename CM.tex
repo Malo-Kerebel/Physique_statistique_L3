@@ -883,7 +883,7 @@ On note \(\beta = \dfrac{1}{k_B} \equiv \left[ \dfrac{1}{\text{énergie}}\right]
 
 Il faut normaliser les probas, donc :
 \[
-	Z = \sum_{état} e^{-\beta E_\ell}
+	Z = \sum_{\text{état}} e^{-\beta E_\ell}
 \]
 
 \(Z\) est la fonction de partition.
@@ -982,7 +982,7 @@ On mijote,
 	\overline{E^C} = D + \beta  \dfrac{\partial Z}{\partial \beta} = F  - T\left(  \dfrac{\partial Z}{\partial T} \right)
 \]
 
-La capacité calorifique à volume constant : \(C_V = \left.  \dfrac{\partial overline{E^C}}{\partial T} \right)_{V, N} \)
+La capacité calorifique à volume constant : \(C_V = \left.  \dfrac{\partial \overline{E^C}}{\partial T} \right)_{V, N} \)
 
 \begin{align*}
 	\overline{E^C} &= - \dfrac{\partial \ln Z}{\partial \beta}\\
@@ -1047,7 +1047,53 @@ Avec Helmohltz : \(\overline{E^C} = F - T\left( \dfrac{\partial F}{\partial T} \
 
 On a donc le même lien entre \(S^C\) et \(F\) qu'en thermo classique
 \[
-	S = \left. \dfrac{-\partial F}{\partial T}\right|_{V, N}
+	S^C = \left. \dfrac{-\partial F}{\partial T}\right|_{V, N}
 \]
+
+\begin{center}
+\textbf{CM10 (2021-03-23)}
+\end{center}
+
+Comme en microcanonique on définit :
+
+\[
+	p^C = \dfrac{-\partial F	}{\partial V} \quad \quad \quad \mu^C = \dfrac{\partial  F	}{\partial N }
+\]
+
+\section{système constitué de deux système macroscopique indépendants.}
+
+La fonction de partition de $S = S_1 U S_2$ se factorise :
+\[
+	Z = Z_1 \cdot Z_2
+\]
+
+L'énergie libre est additive : \( F = F_1 + F_2 \)
+
+Ça se généralise à des système de n sous-système indépendants.
+
+F comme S et $\overline{E^C}$ est une grandeur extensive
+
+Dans un système isolé, l'évolution est dans le sens croissant de son entropie, on applique ce résultat au système global qui est isolé.
+
+Après relâchement d'une contrainte le nouvel état d'équilibre correspond à un minimum de l'énergie libre F compatible avec les contraintes restantes.
+
+Système macroscopique atteint la limite thermodynamique si \( N \rightarrow \infty \) et \( V \rightarrow \infty \) (Mais \(\dfrac{V}{N}\) reste fini).
+On a vu que : \( \dfrac{y}{ \Delta} \propto \dfrac{1}{\sqrt{N}} \) donc fluctuations des diverses variables internes (y) deviennent négligeable.
+\[
+	y \simeq \overline{y} 
+\]
+
+Plus de différence entre paramètre extérieurs et variables internes 
+
+Ce système est appelé système thermodynamique
+
+On a :
+\[
+	S^C = S^\star \quad \quad \quad p^C = p^\star \quad \quad \quad \mu^C = \mu^\star
+\]
+
+À la limite thermodynamique les descriptions canonique et micro-canonique d'un système à l'équilibre sont équivalentes.
+
+
 
 \end{document}
