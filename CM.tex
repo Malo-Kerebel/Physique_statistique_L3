@@ -883,7 +883,7 @@ On note \(\beta = \dfrac{1}{k_B} \equiv \left[ \dfrac{1}{\text{énergie}}\right]
 
 Il faut normaliser les probas, donc :
 \[
-	Z = \sum_{\text{état}} e^{-\beta E_\ell}
+	Z = \sum_{état} e^{-\beta E_\ell}
 \]
 
 \(Z\) est la fonction de partition.
@@ -982,7 +982,7 @@ On mijote,
 	\overline{E^C} = D + \beta  \dfrac{\partial Z}{\partial \beta} = F  - T\left(  \dfrac{\partial Z}{\partial T} \right)
 \]
 
-La capacité calorifique à volume constant : \(C_V = \left.  \dfrac{\partial \overline{E^C}}{\partial T} \right)_{V, N} \)
+La capacité calorifique à volume constant : \(C_V = \left.  \dfrac{\partial overline{E^C}}{\partial T} \right)_{V, N} \)
 
 \begin{align*}
 	\overline{E^C} &= - \dfrac{\partial \ln Z}{\partial \beta}\\
@@ -1047,218 +1047,101 @@ Avec Helmohltz : \(\overline{E^C} = F - T\left( \dfrac{\partial F}{\partial T} \
 
 On a donc le même lien entre \(S^C\) et \(F\) qu'en thermo classique
 \[
-	S^C = \left. \dfrac{-\partial F}{\partial T}\right|_{V, N}
+	S = \left. \dfrac{-\partial F}{\partial T}\right|_{V, N}
 \]
-
-\begin{center}
-\textbf{CM10 (2021-03-23)}
-\end{center}
-
-Comme en microcanonique on définit :
-
-\[
-	p^C = \dfrac{-\partial F	}{\partial V} \quad \quad \quad \mu^C = \dfrac{\partial  F	}{\partial N }
-\]
-
-\section{système constitué de deux système macroscopique indépendants.}
-
-La fonction de partition de $S = S_1 U S_2$ se factorise :
-\[
-	Z = Z_1 \cdot Z_2
-\]
-
-L'énergie libre est additive : \( F = F_1 + F_2 \)
-
-Ça se généralise à des système de n sous-système indépendants.
-
-F comme S et $\overline{E^C}$ est une grandeur extensive
-
-Dans un système isolé, l'évolution est dans le sens croissant de son entropie, on applique ce résultat au système global qui est isolé.
-
-Après relâchement d'une contrainte le nouvel état d'équilibre correspond à un minimum de l'énergie libre F compatible avec les contraintes restantes.
-
-Système macroscopique atteint la limite thermodynamique si \( N \rightarrow \infty \) et \( V \rightarrow \infty \) (Mais \(\dfrac{V}{N}\) reste fini).
-On a vu que : \( \dfrac{y}{ \Delta} \propto \dfrac{1}{\sqrt{N}} \) donc fluctuations des diverses variables internes (y) deviennent négligeable.
-\[
-	y \simeq \overline{y} 
-\]
-
-Plus de différence entre paramètre extérieurs et variables internes 
-
-Ce système est appelé système thermodynamique
-
-On a :
-\[
-	S^C = S^\star \quad \quad \quad p^C = p^\star \quad \quad \quad \mu^C = \mu^\star
-\]
-
-À la limite thermodynamique les descriptions canonique et micro-canonique d'un système à l'équilibre sont équivalentes.
-
-\begin{center}
-\textbf{CM11 (2021-03-30)}
-\end{center}
-
-\[
-	P_\ell = \dfrac{1}{Z} e^{-\beta E \ell } \qquad Z = \sum_{(\ell)} e^{-\beta E \ell}
-\]
-
-État macroscopique, ($\ell$) du système macro.
-
-($\ell$) = donnée de N états individuels = $(\lambda_1, \lambda_2 \cdots, \lambda_N)$
-D'énergie :
-\[
-	E_\ell = \varepsilon_{\lambda_1} + \varepsilon_{\lambda_2}+ \cdots + \varepsilon_{\lambda_N}
-\]
-
-\paragraph{Exemple} système à deux états d'énergie $\varepsilon_1$ et $\varepsilon_2$
-
-Cas discernable :
-
-\[
-	Z^D = ?
-\]
-En fonction de \( \zeta \) = fonction partition pour une particule.
-\[
-	\zeta = e^{-\beta \varepsilon_1} + e^{-\beta \varepsilon_2}
-\]
-
-Pour deux particules, il y a quatre possibilités, les deux à l'énergie $\varepsilon_1$, les deux à l'énergie $\varepsilon_2$, et la première à l'énergie $\varepsilon_1$ et la deuxième à l'énergie $\varepsilon_2$ et inversement.
-\[
-	Z = \sum_{(\text{état})} e^{-\beta \varepsilon} = e^{-\beta 2 \varepsilon_1}+e^{-\beta 2 \varepsilon_2} + 2 e^{-\beta (\varepsilon_1 + \varepsilon_2)}  = \zeta^2
-\]
-
-Les états doivent tous être pris dans un seul et même ensemble d'états individuels possibles.
-
-N états individuels définissent encore un état du système (car les particules sont indépendantes).
-Mais il n'est pas possible d'attribuer chaque état individuel à une particule donnée.
-Un état microscopique du système caractérisé par la donnée d'une liste non ordonnée de N état individuels.
-
-Dans le cas indiscernable il n'y a lus quatre états mais seulement trois.
-
-\[
-	Z^i = \sum_{(\text{état})} e^{-\beta \varepsilon} = e^{-\beta 2 \varepsilon_1}+e^{-\beta 2 \varepsilon_2} + e^{-\beta (\varepsilon_1 + \varepsilon_2)}
-\]
-
-Dans le cas des particules discernables on peut attribuer à chacune des particule un numéro fixe.
-En quantique, des particules identiques sont indiscernables,
-Elles occupent des sites distincts, elles sont repérables par leur position qu'on peut numéroter.
-Chaque état individuel est attaché à un site particulier.
-À chaque état est associé à une liste ordonnée de N états individuels.
-
-On montre alors que :
-\[
-	Z = \zeta^N
-\]
-
-Comme $F = -k_B T ln Z = - k_B T ln \zeta^N = - N k_B T ln \zeta = N f$
-
-Énergie moyenne :
-\begin{align*}
-	\overline{E^C} &= - \dfrac{\partial ln Z}{\partial \beta}\\
-	&= -\dfrac{\partial ln \zeta^N}{ \partial \beta}\\
-	&= -N \dfrac{\partial ln \zeta}{ \partial \beta}\\
-	&= N \overline{\varepsilon}
-\end{align*}
-
-Statistique de Boltzmann :
-
-\[
-	\overline{N_\lambda} = \dfrac{N}{\zeta} e^{-\beta \varepsilon_\lambda}
-\]
-
-Pour les particules discernables le nombre d'occupation moyen diminue exponentiellement avec l'énergie de l'état.
-
-Pour les particules indiscernables.
-
-Les états doivent tous être pris dans un seul et même ensemble d'état individuels possibles.
-N états individuels définissent encore un état du système.
-
-Il faut prendre en compte le facteur d'indiscernabilité $f(\lbrace N_\lambda \rbrace, N)$
-
-on ne peut plus factoriser Z comme dans le cas discernable.
-
-Pour les bosons :
-\[
-	f_B(\lbrace N_\lambda \rbrace, N) = \dfrac{\prod_\lambda N_\lambda !}{N!}
-\]
-
-Pour les fermions :
-\[
-	f_F(\lbrace N_\lambda \rbrace, N) = \dfrac{\prod_\lambda \alpha (N_\lambda !)}{N!}
-\]
-
-Avec \( \alpha (N_\lambda !) =1 \) si $N_\lambda = 0~ou~1$, 0 sinon
-
-Approximation de Maxwell Boltzmann :
-
-Les moyennes des nombre d'occupation des divers états individuels est petites si et seulement si : $\overline{N^C_\lambda} \ll 1 \forall(\lambda)$, on néglige les états pour lesquels $N_\lambda > 2$
-
-Dans cette approximation Z est la même pour les bosons et les fermions et vaut :
-\[
-	Z = \dfrac{\zeta^N}{N!}
-\]
-
-Cette approximation n'est bonne qu'à haute température.
-L'approximation est basé sur l'hypothèse que toutes les particules sont dans des états quantiques différents.
-
-On a :
-\[
-	\overline{N_\lambda^C} \ll 1 \Leftrightarrow \dfrac{N}{\zeta} e^{-\varepsilon_0/kT} \Leftrightarrow N \ll \zeta e^{\varepsilon_0/kT} \Leftrightarrow \sum_{(\ell)} e^{- (\varepsilon_\ell - \varepsilon_0)/jT} \gg N
-\]
-
-Pour des particules discernables :
-\[
-	Z(T,x) = Z = \dfrac{1}{h^r} \int \left[ \prod_{i=1}^r dq_i dp_i \right] e^{-\beta \mathcal{H}(q,p)}
-\]
-
-Pour le cas indiscernable :
-\[
-	Z(T,x) = Z = \dfrac{1}{N!} \dfrac{1}{h^r} \int \left[ \prod_{i=1}^r dq_i dp_i \right] e^{-\beta \mathcal{H}(q,p)}
-\]
-
-L'approximation classique est valable si 
-\[
-	T \gg \theta
-\]
-
-Avec $\theta = \dfrac{\Delta \varepsilon}{k_B}$
-
-Théorème d'équipartition de l'énergie.
-
-\paragraph{Énoncé}\quad
-
-Tout terme indépendant quadratique de la fonction de Hamilton a pour valeur moyenne : \( \dfrac{1}{2} k_B T \)
-	
-Ce théorème ne s'applique qu'aux système pouvant être décrit par la mécanique classique	.
-
-Avec la fonction d'Hamilton :
-\[
-	\mathcal{H}(q_i, p_i) = ap^2_m + b
-\]
-Alors : $\overline{ap^2_m} = \dfrac{1}{2} k_B T $
 
 \chapter{Application de la description canonique}
 
-\section{oscillateur harmonique à une dimension}
+\section{Oscillations harmonique à une dimension}
 
-\subsubsection{approximation du potentiel réel autour de l'équilibre}
+\subsubsection{Approximation du potentiel réel autour de l'équilibre}
 
-Utile pour décrire les vibrations des molécules ou des atomes dans un solide
+Utile pour décrire les vibrations des molécules ou des atomes dans un solide.
 
 \subsubsection{Oscillateur harmonique quantique}
 
-État écrit par $n \in \mathbb{N}$, énergie $ E_n = \left ( n + \dfrac{1}{2} \right ) \hbar \omega $
+État décrit par \(n \in \mathbb{N}\), énergie : \(E_n = (n + \frac{1}{2}) \hbar \omega\)
 
-\subsubsection{fonction de partition}
+\subsubsection{Fonction de partition}
 
 \[
-	\zeta = \sum_n e^{-\beta \left ( n + \dfrac{1}{2} \right ) \hbar \omega } = \dfrac{1}{2 \sinh \left ( \beta \hbar \omega / 2 \right )}
+	\zeta = \sum_n e^{-\beta \left ( n + \frac{1}{2}\right ) \hbar \omega} = \dfrac{1}{2\sinh\left ( \beta \hbar \omega/2\right )}
+\]
+
+\subsubsection{Énergie moyenne}
+\[
+	\overline{\varepsilon} = \dfrac{-\partial}{\partial \beta} \ln \zeta = \dfrac{\hbar \omega}{2} \coth \left (\beta \hbar \omega / 2 \right )
+\]
+
+\subsubsection{Capacité calorifique}
+
+\[
+	C_V = k_B \left ( \dfrac{\hbar \omega}{2 k_B T} \right )^2 \dfrac{1}{2\sinh\left ( \hbar \omega/2 k_B T\right )}
+\]
+
+\subsubsection{Classique}
+
+\[
+	\varepsilon = \dfrac{p^2}{2l} + \dfrac{m \omega^2 x^2}{2}
+\]
+\[
+	\zeta = \iint e^{-\beta \varepsilon} dx dp = \dfrac{1}{h} \sqrt{\dfrac{2m\pi}{\beta}} \sqrt{\dfrac{2\pi}{\beta m \omega^2}} = \dfrac{2\pi}{h \beta \omega}
+\]
+\[
+	\overline{\varepsilon} = \dfrac{1}{\beta} = k_B T \Rightarrow C_V = k_B
+\]
+
+\subsubsection{spin \(\frac{1}{2}\) dans un champ magnétique}
+
+\subsubsection{états et énergie individuel}
+
+Spin \(\frac{1}{2}\) donc 2 états notés (1) et (2) pour chaque particule d'énergie : \(-\mu_B B, + \mu_B B\)
+
+\subsubsection{Fonction de partition}
+
+\[
+	\zeta = e^{\beta \mu_B B} + e^{-\beta mu_B B} = 2 \cosh(\beta \mu_B B)
 \]
 
 \subsubsection{Énergie moyenne}
 
 \[
-	\overline{\varepsilon} = -\dfrac{\partial}{\partial \beta} \ln 
+	\overline{\varepsilon} = -\mu_B \beta \tanh(x) \qquad x = \beta \mu_B B
 \]
+
+\subsubsection{ Fonction partition des N spin}
+
+\[
+	Z = \zeta^N \Rightarrow E = N \overline{\varepsilon}
+\]
+
+\subsubsection{Probabilité d'occupation des états (i)}
+
+\[
+	P_1 = \dfrac{1}{\zeta}e^x \qquad P_2 = \dfrac{1}{zeta} e^x
+\]
+
+\subsubsection{moment magnétique moyen}
+
+\[
+	\overline{\mu} = \P_1 \mu_1 + P_2 \mu_2 = \mu_2 \tanh(x)
+\]
+
+\subsubsection{Cas limite}
+
+\[
+	x \ll 1 \Rightarrow \overline{\mu} = \mu x \quad \text{Loi de Curie}
+\]
+\[
+	x \gg 1 \Rightarrow \mu = mu_B \quad \text{Saturation}
+\]
+
+\subsubsection{Entropie}
+
+\begin{align*}
+	S &= \dfrac{\overline{E} - F}{T}\\
+	&= N \dfrac{1}{T} \left ( - \mu_B B \tanh (x) + k_B T \ln (2 \cosh(x)\right )\\
+	&= N k_B \left ( x \tanh(x) + 2 \ln (2 \cosh(x) \right )
+\end{align*}
 
 \end{document}
