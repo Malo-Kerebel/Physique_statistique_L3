@@ -1144,4 +1144,38 @@ Spin \(\frac{1}{2}\) donc 2 états notés (1) et (2) pour chaque particule d'én
 	&= N k_B \left ( x \tanh(x) + 2 \ln (2 \cosh(x) \right )
 \end{align*}
 
+\subsection{Moment dipolaire électrique dans un champ électrique}
+
+Sans champs électrique, toutes les direction sont équiprobable, \( \vec{P} = \sum_i \vec{p_i} = \vec{0} \)
+
+Avec un champ électrique \( \vec{E} = E \vec{u_z} \), On a l'énergie : \( \varepsilon= - p \vec{E} = -p E \cos\theta \), on a donc \( \varepsilon \) qui ne dépend que de \( \theta \)
+
+La probabilité que \( \vec{p} \) soit dans \( d\Omega \) est :
+\[
+	dP = \frac{1}{\zeta} e^{-\beta \varepsilon} d\Omega
+\]
+
+Avec la fonction de partition :
+
+\[
+	\zeta = \int e^{-\beta \varepsilon} d \Omega
+\]
+
+On a donc le moment moyen :
+\begin{align*}
+	\overline{\vec{p}} &= \frac{1}{\zeta} \int \vec{p} e^{-\beta \varepsilon} d\Omega\\
+	&= \frac{1}{\zeta} \int_0^{2\pi} d\varphi \int_0^\pi \vec{p} e^{-\beta \varepsilon} \sin(\theta) d\theta\
+\end{align*}
+
+Il y a isotropie dans le plan perpendiculaire à \( \vec{E} \), on a donc : \( \overline{p_1} = \overline{p_2} = 0 \). Après mijotage, on trouve :
+\[
+	\overline{p_3} p \left [ \coth (x) - \frac{1}{x} \right ] \qquad \text{avec } x = \beta p \varepsilon
+\]
+
+\subsection{Introduction et définition}
+
+\subsubsection{Gaz parfait à 3 dimensions}
+
+N particule de masse m, sans intéraction mutuelle dans un volume \( V = L^3\). on se limite aux gaz parfait classique, approximation de M-B valide. Limitation aux gaz parfait monoatomiques, on a donc un seul degré de liberté, la translation.
+
 \end{document}
